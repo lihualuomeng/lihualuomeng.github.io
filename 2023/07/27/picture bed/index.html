@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Archives | Hexo</title>
+        <title>picture_bed | Hexo</title>
         <meta name="author" content="John Doe" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -28,6 +28,10 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
 
 
 
@@ -141,40 +145,84 @@
 </transition>
 
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-                
-<div id="archives">
-    
-    <div id="timeline-wrap" ref="timeline">
+                <div class="article">
+    <div>
+        <h1>picture_bed</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/7/27
+        </span>
         
-        <div class="timeline" data-title="creat_my_boke">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/7/26</div>
-                <a href="/2023/07/26/creat_my_boke/">
-                    <h3>creat_my_boke</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="timeline" data-title="picture_bed">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2023/7/27</div>
-                <a href="/2023/07/27/picture%20bed/">
-                    <h3>picture_bed</h3>
-                </a>
-                <div class="info">
-                    
-                    
-                </div>
-            </div>
-        </div>
         
     </div>
+    
+    <div class="content" v-pre>
+        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>1、环境（environment）</p>
+<p>（1）下载并安装<a target="_blank" rel="noopener" href="https://nodejs.org/en">node.js</a></p>
+<p>（2）下载并安装<a target="_blank" rel="noopener" href="https://molunerfinn.com/PicGo/">Picgo</a></p>
+<p>（3）安装<a target="_blank" rel="noopener" href="http://b.zhr33.cn/typora/">typora</a></p>
+<p>2、对typora进行偏好设置</p>
+<p>（1）打开typora，点击左上角文件，打开偏好设置</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271619947.png" alt="image-20230727161903215"></p>
+<p>（2）点击图像，进行如图设置</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271629379.png" alt="image-20230727162926599"></p>
+<p>注意：要用第一幅图的插入图片方法时，要指定好文件夹，推荐，在桌面上创立，如果选用下图的插入图片方法，就不必创建文件夹</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271626603.png" alt="image-20230727162622933"></p>
+<p>3、PicGo设置</p>
+<p>（1）点击PicGo设置</p>
+<p>a.打开如下图的所有设置</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271635325.png" alt="image-20230727163515765"></p>
+<p>b.关闭最低端所有的显示图床，只留下github</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271636474.png" alt="image-20230727163600499"></p>
+<p>（2）打开图床设置，点击GitHub，进行新增图床设置</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271637059.png" alt="image-20230727163753608"></p>
+<p>（3）在github上创建一个新的数据库</p>
+<p>a.点击头像</p>
+<p><img src="C:/Users/Lenovo/Desktop/tupian/202307271508059.png" alt="image-20230727150843572"></p>
+<p>b.点击“your repositories”</p>
+<p><img src="C:/Users/Lenovo/Desktop/tupian/202307271536865.png" alt="image-20230727153616430"></p>
+<p>c.找到并点击“new按钮”</p>
+<p><img src="C:/Users/Lenovo/Desktop/tupian/202307271537664.png" alt="image-20230727153734316"></p>
+<p>d.在Repository name 存储库名称一栏输入“图床名字”，推荐命名为“picturebed”，然后划到最底下找到“create repository”即可创立</p>
+<p>（4）创建token</p>
+<p>a.在github中，点击头像</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271647679.png" alt="image-20230727150843572"></p>
+<p>b.点击设置</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271648277.png" alt="image-20230727164830370"></p>
+<p>c、左侧一栏划到最下端，点击开发者设置</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271649299.png" alt="image-20230727164930305"></p>
+<p>d.如图步骤点击，开始创建</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271651259.png" alt="image-20230727165155265"></p>
+<p>e.输入密码，确认权限后，会出现如下图，按下图步骤进行创建</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271655405.png" alt="image-20230727165458934"></p>
+<p>之后再划到最底部，点击“Generate token”按钮即可创立成功</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271656594.png" alt="image-20230727165558657"></p>
+<p>f.复制token即可</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271657984.png" alt="image-20230727165752989"></p>
+<p>（4）配置PicGo图床</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271709134.png" alt="image-20230727170921557"></p>
+<p>（5）设刚刚新建的图床为默认图床</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271710583.png" alt="image-20230727171010419"></p>
+<p>（6）打开typora的偏好设置，点击验证图片上传选项</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271711487.png" alt="image-20230727171117433"></p>
+<p>当显示以下结果，则说明图床搭建成功</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271712716.png" alt="image-20230727171221472"></p>
+<p>（9）好处</p>
+<p>在通过typora编辑boke文章时，我们能够通过“ctrl+alt+a”快速截屏，再“ctrl+v”复制即可粘贴图片，由于搭建了图床，则可以通过上传图片到图床，使得我们不用再另外在blog文件夹中专门建立放图片的文件夹，然后将编辑图片一个个存入，有了图床，我们就可以直接上传图片，省去麻烦的步骤如下图：</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271718364.png" alt="image-20230727171830059"></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
 </div>
 
                 <footer id="footer">
@@ -205,6 +253,12 @@
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+
+
+
+
         
     </body>
 </html>
