@@ -182,7 +182,10 @@
         <div class="content" v-pre>
             
             <h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="一、IP"><a href="#一、IP" class="headerlink" title="一、IP"></a>一、IP</h2><p>1、IP地址:在网络中用于标识一个节点（或网络设备的接口），数据就是通过它来找到的目的地的。</p>
-<p>2、IP地址构成:网络部分（位）+主机部分（位）组成<br>(1)网络部分（位）:用来标识一个网络<br>(2)主机部分（位）:用来区分一个网络内的不同主机<br>3、IP分类<br>（1）A类：0–127<br>私有地址：10.0.0.0–10.255.255.255<br>（2）B类：128–191<br>私有地址：172.16.0.0–172.31.255.255<br>（3）C类：192–223<br>私有地址：172.16.0.0–172.31.255.255<br>（4）D类：224–239<br>用于组播<br>（5）E类：240–255<br>用于研究<br>4、特殊地址：<br>（1）有限广播地址，255.255.255.255。作用：可作为目的地址，发往该网段所有主机（受限于网关）<br>（2）任意地址，0.0.0.0。作用：“任何网络”的网络地址；“这个网络上这个主机接口”的IP地址<br>（3）环回地址，127.0.0.0&#x2F;8。作用：测试设备自身的软件系统<br>（4）本地链路地址，169.254.0.0&#x2F;24。作用：当主机自动获取地址失败后，可使用该网段中的某个地址进行临时通信<br>5、IP查询<br>1、<a target="_blank" rel="noopener" href="https://www.ip138.com/">1</a><br>2、<a target="_blank" rel="noopener" href="https://ip.cn/">2</a><br>6、溯源<br>1、<a target="_blank" rel="noopener" href="https://cn.linkedin.com/">领英</a><br>2、学信网:<a target="_blank" rel="noopener" href="https://chsi..com.cn/">https://chsi..com.cn</a></p>
+<p>2、IP地址构成:网络部分（位）+主机部分（位）组成<br>(1)网络部分（位）:用来标识一个网络<br>(2)主机部分（位）:用来区分一个网络内的不同主机<br>3、IP分类<br>（1）A类：0–127<br>私有地址：10.0.0.0–10.255.255.255<br>（2）B类：128–191<br>私有地址：172.16.0.0–172.31.255.255<br>（3）C类：192–223<br>私有地址：172.16.0.0–172.31.255.255<br>（4）D类：224–239<br>用于组播<br>（5）E类：240–255<br>用于研究<br>4、特殊地址：<br>（1）有限广播地址，255.255.255.255。作用：可作为目的地址，发往该网段所有主机（受限于网关）<br>（2）任意地址，0.0.0.0。作用：“任何网络”的网络地址；“这个网络上这个主机接口”的IP地址<br>（3）环回地址，127.0.0.0&#x2F;8。作用：测试设备自身的软件系统<br>（4）本地链路地址，169.254.0.0&#x2F;24。作用：当主机自动获取地址失败后，可使用该网段中的某个地址进行临时通信<br>5、IP查询<br>（1）<a target="_blank" rel="noopener" href="https://www.ip138.com/">1</a><br>（2）<a target="_blank" rel="noopener" href="https://ip.cn/">2</a></p>
+<p>（3）ping命令</p>
+<p>（4）nslookup命令</p>
+<p>6、溯源<br>（1）<a target="_blank" rel="noopener" href="https://cn.linkedin.com/">领英</a><br>（2）学信网:<a target="_blank" rel="noopener" href="https://chsi..com.cn/">https://chsi..com.cn</a></p>
 <h2 id="二、DNS"><a href="#二、DNS" class="headerlink" title="二、DNS"></a>二、DNS</h2><p>1、DNS（Domain Name System）：网域名称系统，是因特网的一项核心服务，他作为可以将域名和IP地址相互映射的一个分布式数据，能够使人更方便的访问互联网，而不用去记住能够被机器直接读取的IP地址数串。</p>
 <p>2、域名可分为一级域名（.cn&#x2F;.com&#x2F;.uk&#x2F;.net&#x2F;.us），二级域名，三级域名</p>
 <p><a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></p>
@@ -209,6 +212,7 @@
 <p>如图是一个大的内网，它还包括了几个小内网，以财务系统举例，如下图：</p>
 <p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307281557799.png" alt="image-20230728155733328"><br>7、DNS缓存于本地文件localhost</p>
 <h2 id="四、CDN"><a href="#四、CDN" class="headerlink" title="四、CDN"></a>四、CDN</h2><p>1、CDN：CDN的全称是Content Delivery Network，即内容分发网络。其基本思路是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输得更快、更稳定。通过在网络各处放置节点服务器所构成的在现有的互联网基础之上的一层智能虚拟网络，CDN系统能够实时地根网络流量和各节点的连接、负载状况以及到用户的距离和响应时间等综合信息将用户的请求重新导向离用户最近的服务节点上。其目的是使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度。</p>
+<p>2、因为CDN的存在，有时会导致IP查询有多个，这时候就需要绕过cdn或者直接把cdn打下</p>
 <h2 id="五、重要端口及服务"><a href="#五、重要端口及服务" class="headerlink" title="五、重要端口及服务"></a>五、重要端口及服务</h2><table>
 <thead>
 <tr>
