@@ -4,9 +4,9 @@
     <head>
         <meta charset="utf-8" />
         <title>博客</title>
-        <meta name="author" content="lihualuomeng" />
+        <meta name="author" content="梨花落梦" />
         <meta name="description" content="a ordinary netword engineer" />
-        <meta name="keywords" content="" />
+        <meta name="keywords" content="原神启动" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
         <link rel="icon" href="/images/favicon.png" />
         <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
@@ -165,9 +165,18 @@
 
 <div class="post">
     <a href="/2023/07/28/information_collection/">
-        <h2 class="post-title">information _collection</h2>
+        <h2 class="post-title">信息收集</h2>
     </a>
     <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                网络安全
+            </a>
+        </span>
         
         <span class="date">
             <span class="icon">
@@ -182,324 +191,21 @@
         <div class="content" v-pre>
             
             <h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="一、IP"><a href="#一、IP" class="headerlink" title="一、IP"></a>一、IP</h2><p>1、IP地址:在网络中用于标识一个节点（或网络设备的接口），数据就是通过它来找到的目的地的。</p>
-<p>2、IP地址构成:网络部分（位）+主机部分（位）组成<br>(1)网络部分（位）:用来标识一个网络<br>(2)主机部分（位）:用来区分一个网络内的不同主机<br>3、IP分类<br>（1）A类：0–127<br>私有地址：10.0.0.0–10.255.255.255<br>（2）B类：128–191<br>私有地址：172.16.0.0–172.31.255.255<br>（3）C类：192–223<br>私有地址：172.16.0.0–172.31.255.255<br>（4）D类：224–239<br>用于组播<br>（5）E类：240–255<br>用于研究<br>4、特殊地址：<br>（1）有限广播地址，255.255.255.255。作用：可作为目的地址，发往该网段所有主机（受限于网关）<br>（2）任意地址，0.0.0.0。作用：“任何网络”的网络地址；“这个网络上这个主机接口”的IP地址<br>（3）环回地址，127.0.0.0&#x2F;8。作用：测试设备自身的软件系统<br>（4）本地链路地址，169.254.0.0&#x2F;24。作用：当主机自动获取地址失败后，可使用该网段中的某个地址进行临时通信<br>5、IP查询<br>（1）<a target="_blank" rel="noopener" href="https://www.ip138.com/">1</a><br>（2）<a target="_blank" rel="noopener" href="https://ip.cn/">2</a></p>
-<p>（3）ping命令</p>
-<p>（4）nslookup命令</p>
-<p>6、溯源<br>（1）<a target="_blank" rel="noopener" href="https://cn.linkedin.com/">领英</a><br>（2）学信网:<a target="_blank" rel="noopener" href="https://chsi..com.cn/">https://chsi..com.cn</a></p>
-<h2 id="二、DNS"><a href="#二、DNS" class="headerlink" title="二、DNS"></a>二、DNS</h2><p>1、DNS（Domain Name System）：网域名称系统，是因特网的一项核心服务，他作为可以将域名和IP地址相互映射的一个分布式数据，能够使人更方便的访问互联网，而不用去记住能够被机器直接读取的IP地址数串。</p>
-<p>2、域名可分为一级域名（.cn&#x2F;.com&#x2F;.uk&#x2F;.net&#x2F;.us），二级域名，三级域名</p>
-<p><a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></p>
-<p>baidu.com就是一级域名</p>
-<p>3、子域名：在根域（一级域）上加上不同前缀</p>
-<p>如：</p>
-<p><a target="_blank" rel="noopener" href="http://www.baidu.com就是baidu.com的子域名/">www.baidu.com就是baidu.com的子域名</a></p>
-<p>访问网站dns访问过程</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307281039451.png" alt="image-20230728103903083"></p>
-<p>4、DNS解析内容</p>
-<p>（1）A记录：IP地址记录</p>
-<p>（2）AAA记录：IPv6地址记录</p>
-<p>（3）CNAME记录：别名记录</p>
-<p>（4）MX：邮件交换记录</p>
-<p>（5）NS：域名服务器记录</p>
-<p>（6）PTR：反向记录</p>
-<p>（7）TXT：域名相关信息记录</p>
-<p>5、域名查询网站</p>
-<p> （1）腾讯云：<a target="_blank" rel="noopener" href="https://whois.cloud.tencent.com/domain">https://whois.cloud.tencent.com/domain</a><br> （2）站长之家：<a target="_blank" rel="noopener" href="https://whois.chinaz.com/">https://whois.chinaz.com/</a><br> （3）Whois：<a target="_blank" rel="noopener" href="https://www.whois.com/whois/">https://www.whois.com/whois/</a></p>
-<p>（4）nsdb：<a target="_blank" rel="noopener" href="https://dnsdb.io/zh-cn/">https://dnsdb.io/zh-cn/</a><br>（5）情报社区：<a target="_blank" rel="noopener" href="https://x.threatbook.cn/">https://x.threatbook.cn/</a><br>（6）netcraft：<a target="_blank" rel="noopener" href="http://toolbar.netcraft.com/site_report?url=">http://toolbar.netcraft.com/site_report?url=</a><br>（7）viewdnsinfo：<a target="_blank" rel="noopener" href="http://viewdns.info/">http://viewdns.info/</a><br>（8）17ce：<a target="_blank" rel="noopener" href="http://www.17ce.com/">http://www.17ce.com/</a><br>（9）riskiq：<a target="_blank" rel="noopener" href="https://community.riskiq.com/">https://community.riskiq.com/</a></p>
-<p>6、子域名爆破</p>
-<p>（1）在线子域名爆破：不占用内存。例：<a target="_blank" rel="noopener" href="http://z.zcjun.com/">http://z.zcjun.com/</a></p>
-<p>（2）软件实现子域名爆破。例：layer子域名挖掘机</p>
-<p>7、http证书查询:<a target="_blank" rel="noopener" href="https://censys.io/">https://censys.io/</a></p>
-<h2 id="三、内网：内部局域网，如下图："><a href="#三、内网：内部局域网，如下图：" class="headerlink" title="三、内网：内部局域网，如下图："></a>三、内网：内部局域网，如下图：</h2><p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307281555853.png" alt="image-20230728155524484"></p>
-<p>如图是一个大的内网，它还包括了几个小内网，以财务系统举例，如下图：</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307281557799.png" alt="image-20230728155733328"><br>7、DNS缓存于本地文件localhost</p>
-<h2 id="四、CDN"><a href="#四、CDN" class="headerlink" title="四、CDN"></a>四、CDN</h2><p>1、CDN：CDN的全称是Content Delivery Network，即内容分发网络。</p>
-<p>2、原理：其基本思路是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输得更快、更稳定。通过在网络各处放置节点服务器所构成的在现有的互联网基础之上的一层智能虚拟网络，CDN系统能够实时地根网络流量和各节点的连接、负载状况以及到用户的距离和响应时间等综合信息将用户的请求重新导向离用户最近的服务节点上。其目的是使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度。</p>
-<p>3、CDN配置-域名&amp;区域&amp;类型</p>
-<p>（1）加速域名：当某IP地址下的某个域名被加速，那么当用户访问该域名时，它就是被加速访问的，存在CDN缓存中。</p>
-<p>（2）业务类型：服务器中被加速的资源。三种加速类型：页面加速、大文件下载加速，视频点播。也可以进行全站加速。</p>
-<p>（3）加速区域：指定特定的区域进行加速，加速效果旨在区域内有效</p>
-<p>4、有CDN访问和无CDN访问（传统访问）的区别</p>
-<p>5、CDN绕过&#x2F;</p>
-<p>（1）原因：因为CDN的存在，有时会导致IP查询有多个，这时候就需要绕过CDN或者直接把CDN打下。</p>
-<p>（2）方法：</p>
-<p>a.子域名：某些企业业务线较多，有些站点的主站或者部分域名使用了CDN加速，但是一些子域名未使用加速服务，那么就可以通过子域名获取目标的真实IP。</p>
-<p>b.利用网站漏洞：利用网站的漏洞让目标服务器去访问我们自己设置的资源，因为是目标主动出来访问，所有很大概率是真实IP</p>
-<p>c.历史DNS记录：在目标域名还没有使用DNS的时候，有可能通过历史记录查询到真实IP。</p>
-<p>d.CDN本身入手：得到控制面板的账号密码，从而获取IP就容易很多。</p>
-<p>e.邮件服务查询：站点一般都存在发送邮件的功能，一般邮件都在内部，也有经过CDN解析，可能在邮件的源码里就包含服务器的真实IP。</p>
-<p>f.国外请求：如果域名配置DNS加速区域时，没有配置国外或存在没配置的区域，那么可以在国外或者存在没配置的区域里访问域名，这样不会收到CDN加速服务的干扰的同时可以访问到真实的IP。</p>
-<p>g.探测扫描：利用fuckcdn工具</p>
-<p>h.需要找xiaix.me网站的真实IP，我们首先从apnic获取IP段，然后使用Zamp的banner-grab扫描出来的80端口开放的主机进行banner抓取，最后在http-req中的Host写xiaix.me。</p>
-<p>i.网络空间引擎搜索法：常见的有钟馗之眼，shodan，fofa。</p>
-<p>j.访问phpinfo.php：当服务器存在某种漏洞时，例如：文件上传，XSS等，可以利用漏洞去访问phpinfo.php文件，在下面会发现IP地址。通过百度查看IP地址，通过百度查看IP地址是否是本地局域网，如果时区域网则证明目标有多个网卡获取的是内网IP，如果不是则成功发现真实IP。因为是通过内部文件发现的IP，所以属于反向链接。（该方法适用于没有内网网卡的服务器）</p>
-<h2 id="五、重要端口及服务"><a href="#五、重要端口及服务" class="headerlink" title="五、重要端口及服务"></a>五、重要端口及服务</h2><table>
-<thead>
-<tr>
-<th>port</th>
-<th>service</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>21</td>
-<td>FTP</td>
-<td>FTP控制端口，检查匿名登录、弱口令</td>
-</tr>
-<tr>
-<td>22</td>
-<td>SSH</td>
-<td>SSH远程登录协议，检查弱口令</td>
-</tr>
-<tr>
-<td>23</td>
-<td>Telnet</td>
-<td>Telnet终端仿真协议</td>
-</tr>
-<tr>
-<td>53</td>
-<td>DNS服务</td>
-<td>域名解析</td>
-</tr>
-<tr>
-<td>80</td>
-<td>Web</td>
-<td>检查常见Web漏洞及管理后台</td>
-</tr>
-<tr>
-<td>111</td>
-<td>NFS</td>
-<td>网络文件系统</td>
-</tr>
-<tr>
-<td>389</td>
-<td>LDAP</td>
-<td>轻型目录访问协议，检查是否存在匿名访问</td>
-</tr>
-<tr>
-<td>443</td>
-<td>OpenSSL</td>
-<td>检查心脏滴血及Web漏洞</td>
-</tr>
-<tr>
-<td>445</td>
-<td>SMB</td>
-<td>检查是否存在MS17-010、MS08-067漏洞</td>
-</tr>
-<tr>
-<td>512</td>
-<td>Rexec</td>
-<td>检查远程shell命令及暴力破解</td>
-</tr>
-<tr>
-<td>873</td>
-<td>Rsync</td>
-<td>检查匿名登录、弱口令</td>
-</tr>
-<tr>
-<td>1433</td>
-<td>SQL Server</td>
-<td>数据库服务</td>
-</tr>
-<tr>
-<td>1521</td>
-<td>Oracle</td>
-<td>数据库服务</td>
-</tr>
-<tr>
-<td>2049</td>
-<td>NFS</td>
-<td>NFS未授权访问</td>
-</tr>
-<tr>
-<td>2181</td>
-<td>Zookeeper</td>
-<td>分布式协调系统</td>
-</tr>
-<tr>
-<td>2375</td>
-<td>Docker Remote</td>
-<td>API未授权访问</td>
-</tr>
-<tr>
-<td>3306</td>
-<td>MySQL</td>
-<td>数据库服务</td>
-</tr>
-<tr>
-<td>3389</td>
-<td>RDP</td>
-<td>远程桌面</td>
-</tr>
-<tr>
-<td>4848</td>
-<td>GlassFish</td>
-<td>未授权访问</td>
-</tr>
-<tr>
-<td>5432</td>
-<td>PostgreSQL</td>
-<td>数据库服务</td>
-</tr>
-<tr>
-<td>5601</td>
-<td>Kibana</td>
-<td>开源分析及可视化平台</td>
-</tr>
-<tr>
-<td>5672</td>
-<td>RabbitMQ</td>
-<td>开源消息队列服务软件</td>
-</tr>
-<tr>
-<td>5900</td>
-<td>VNC</td>
-<td>远程桌面控制软件，检查弱口令</td>
-</tr>
-<tr>
-<td>5984</td>
-<td>CouchDB</td>
-<td>数据库服务</td>
-</tr>
-<tr>
-<td>6379</td>
-<td>Redis</td>
-<td>数据库服务</td>
-</tr>
-<tr>
-<td>7001</td>
-<td>Weblogic</td>
-<td>Weblogic Console默认端口</td>
-</tr>
-<tr>
-<td>8000-9090</td>
-<td>Web</td>
-<td>常见Web端口，运维一般将管理后台开在这些非80端口上</td>
-</tr>
-<tr>
-<td>8080</td>
-<td>Jenkins</td>
-<td></td>
-</tr>
-<tr>
-<td>8080</td>
-<td>Kubernetes Api Server</td>
-<td></td>
-</tr>
-<tr>
-<td>8081</td>
-<td>Apache-Flink</td>
-<td></td>
-</tr>
-<tr>
-<td>8089</td>
-<td>Druid</td>
-<td></td>
-</tr>
-<tr>
-<td>8090</td>
-<td>Confluence</td>
-<td></td>
-</tr>
-<tr>
-<td>8095</td>
-<td>Atlassian Crowd</td>
-<td></td>
-</tr>
-<tr>
-<td>8161</td>
-<td>Active MQ</td>
-<td></td>
-</tr>
-<tr>
-<td>8888</td>
-<td>Jupyter Notebook</td>
-<td></td>
-</tr>
-<tr>
-<td>8983</td>
-<td>Solr</td>
-<td></td>
-</tr>
-<tr>
-<td>9000</td>
-<td>Fast-CGI</td>
-<td>对外访问可直接Get shell</td>
-</tr>
-<tr>
-<td>9060</td>
-<td>Websephere</td>
-<td>管理端口</td>
-</tr>
-<tr>
-<td>9092</td>
-<td>Kafka</td>
-<td>开源流处理平台</td>
-</tr>
-<tr>
-<td>9200</td>
-<td>Elasticsearch(http)</td>
-<td>全文搜索引擎</td>
-</tr>
-<tr>
-<td>9300</td>
-<td>Elasticsearch(tcp)</td>
-<td>全文搜索引擎</td>
-</tr>
-<tr>
-<td>10000</td>
-<td>Virualmin&#x2F;Webmin</td>
-<td>服务器虚拟主机管理系统</td>
-</tr>
-<tr>
-<td>10051</td>
-<td>Zabbix</td>
-<td>监控系统</td>
-</tr>
-<tr>
-<td>11211</td>
-<td>Memcache</td>
-<td>分布式高速缓存系统，检查未授权访问</td>
-</tr>
-<tr>
-<td>20880</td>
-<td>Dubbo</td>
-<td>阿里巴巴开源分布式服务框架</td>
-</tr>
-<tr>
-<td>27017</td>
-<td>MongoDB</td>
-<td>数据库服务</td>
-</tr>
-<tr>
-<td>28017</td>
-<td>MongoDB</td>
-<td>数据库服务（统计页面）</td>
-</tr>
-<tr>
-<td>50030</td>
-<td>Hadoop Hive</td>
-<td></td>
-</tr>
-<tr>
-<td>50070</td>
-<td>Hadoop</td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="六、泛解析"><a href="#六、泛解析" class="headerlink" title="六、泛解析"></a>六、泛解析</h2><p>1、泛解析：也叫域名解析，是指，利用通配符*来做次级域名以实现所有的次级域名都指向同一IP。</p>
-<p>例：你的域名为“yumin.com”，那么做一个“.yumin.com”的次级域名A记录指向111.111.111.111，那么生效后的那个访问指无论输入的是“123.yumin.com”还是“d&amp;<em>&amp;</em>&amp;&amp;&amp;）（.yunmin.com”这样的任意字符均可指向111.111.111.111。</p>
-<p>2、作用：</p>
-<p>（1）可以让域名支持无限的子域名（最大的用处）</p>
-<p>（2）防止用户的错误输入导致的网站无法访问</p>
-<p>（3）可以直接输入网址登录网站的用户输入简洁的网址即可访问网站</p>
-<h2 id="七、网络空间搜索引擎"><a href="#七、网络空间搜索引擎" class="headerlink" title="七、网络空间搜索引擎"></a>七、网络空间搜索引擎</h2><p>网络空间搜索引擎不同于普通的搜索引擎（例：百度），而是直接搜索网络中的主机，将主机信息汇聚成数据库，然后显示出主机的IP、端口、中间件、摄像头、工控设备bannar等其他网络设备信息</p>
-
+<p>2、IP地址构成:网络部分（位）+主机部分（位）组成<br>(1)网络部分（位）:用来标识一个网络<br>(2)主机部分（位）:用来区分一个网络内的不同主机</p>
             
         </div>
     </div>
     <div class="post-tags">
         
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%83%85%E6%8A%A5/" style="color: #00bcd4">情报</a>
+        </span>
         
     </div>
     <a href="/2023/07/28/information_collection/" class="go-post">阅读全文</a>
@@ -510,6 +216,15 @@
         <h2 class="post-title">picture_bed</h2>
     </a>
     <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E5%8D%9A%E5%AE%A2/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                博客
+            </a>
+        </span>
         
         <span class="date">
             <span class="icon">
@@ -527,61 +242,20 @@
 <p>（1）下载并安装<a target="_blank" rel="noopener" href="https://nodejs.org/en">node.js</a></p>
 <p>（2）下载并安装<a target="_blank" rel="noopener" href="https://molunerfinn.com/PicGo/">Picgo</a></p>
 <p>（3）安装<a target="_blank" rel="noopener" href="http://b.zhr33.cn/typora/">typora</a></p>
-<p>2、对typora进行偏好设置</p>
-<p>（1）打开typora，点击左上角文件，打开偏好设置</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271619947.png" alt="image-20230727161903215"></p>
-<p>（2）点击图像，进行如图设置</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271629379.png" alt="image-20230727162926599"></p>
-<p>注意：要用第一幅图的插入图片方法时，要指定好文件夹，推荐，在桌面上创立，如果选用下图的插入图片方法，就不必创建文件夹</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271626603.png" alt="image-20230727162622933"></p>
-<p>3、PicGo设置</p>
-<p>（1）点击PicGo设置</p>
-<p>a.打开如下图的所有设置</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271635325.png" alt="image-20230727163515765"></p>
-<p>b.关闭最低端所有的显示图床，只留下github</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271636474.png" alt="image-20230727163600499"></p>
-<p>（2）打开图床设置，点击GitHub，进行新增图床设置</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271637059.png" alt="image-20230727163753608"></p>
-<p>（3）在github上创建一个新的数据库</p>
-<p>a.点击头像</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307291559190.png" alt="image-20230727150843572"></p>
-<p>b.点击“your repositories”</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307291601375.png" alt="image-20230729160141219"></p>
-<p>c.找到并点击“new按钮”</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307291608783.png" alt="image-20230727153734316"></p>
-<p>d.在Repository name 存储库名称一栏输入“图床名字”，推荐命名为“picturebed”，然后划到最底下找到“create repository”即可创立</p>
-<p>（4）创建token</p>
-<p>a.在github中，点击头像</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271647679.png" alt="image-20230727150843572"></p>
-<p>b.点击设置</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271648277.png" alt="image-20230727164830370"></p>
-<p>c、左侧一栏划到最下端，点击开发者设置</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271649299.png" alt="image-20230727164930305"></p>
-<p>d.如图步骤点击，开始创建</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271651259.png" alt="image-20230727165155265"></p>
-<p>e.输入密码，确认权限后，会出现如下图，按下图步骤进行创建</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271655405.png" alt="image-20230727165458934"></p>
-<p>之后再划到最底部，点击“Generate token”按钮即可创立成功</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271656594.png" alt="image-20230727165558657"></p>
-<p>f.复制token即可</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271657984.png" alt="image-20230727165752989"></p>
-<p>（4）配置PicGo图床</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271709134.png" alt="image-20230727170921557"></p>
-<p>（5）设刚刚新建的图床为默认图床</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271710583.png" alt="image-20230727171010419"></p>
-<p>（6）打开typora的偏好设置，点击验证图片上传选项</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271711487.png" alt="image-20230727171117433"></p>
-<p>当显示以下结果，则说明图床搭建成功</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271712716.png" alt="image-20230727171221472"></p>
-<p>（9）好处</p>
-<p>在通过typora编辑boke文章时，我们能够通过“ctrl+alt+a”快速截屏，再“ctrl+v”复制即可粘贴图片，由于搭建了图床，则可以通过上传图片到图床，使得我们不用再另外在blog文件夹中专门建立放图片的文件夹，然后将编辑图片一个个存入，有了图床，我们就可以直接上传图片，省去麻烦的步骤如下图：</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271718364.png" alt="image-20230727171830059"></p>
-
             
         </div>
     </div>
     <div class="post-tags">
         
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="color: #ffa2c4">图床</a>
+        </span>
         
     </div>
     <a href="/2023/07/27/picture%20bed/" class="go-post">阅读全文</a>
@@ -592,6 +266,15 @@
         <h2 class="post-title">creat_my_boke</h2>
     </a>
     <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E5%8D%9A%E5%AE%A2/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                博客
+            </a>
+        </span>
         
         <span class="date">
             <span class="icon">
@@ -606,75 +289,20 @@
         <div class="content" v-pre>
             
             <h1 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h1><p>1、安装node.js：<a target="_blank" rel="noopener" href="https://nodejs.org/en%EF%BC%88%E5%B7%A6%E8%BE%B9%E7%9A%84%E9%82%A3%E4%B8%AA%EF%BC%89">https://nodejs.org/en（左边的那个）</a><br>2、安装Git：<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a><br>进入页面后：找到windows，点击打开，找到“32-bit Git for Windows Setup“（32位）或“64-bit Git for Windows Setup“（64位），根据自己的操作系统安装<br>3、注册一个github的账号<br>注意：github名字最好用英文，长度长一点,指令注意大小不能变，如果打不开网页，可以挂一个代理</p>
-<h1 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h1><p>1、在本地找一个地方新建文件夹目录，用英文命名，推荐命名为”boke“<br>2、右击boke，点击git bash here，打开git命令窗口<br>3、在git命令窗口中输入：<br>a.npm install -g hexo-cil<br>b.hexo init blog<br>c.cd blog<br>d.hexo g</p>
-<p>效果图如下：</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307291711931.png" alt="image-20230729171125438"></p>
-<p>5、在git命令窗口中输入cd blog，如图：</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271443712.png" alt="image-20230727144332375"></p>
-<p>再输入以下几条命令检查网络雏形是否可行</p>
-<p>（1）输入“hexo new test_my_site”   &#x2F;&#x2F;创建新文章</p>
-<p>（2）输入“hexo g” &#x2F;&#x2F;生成</p>
-<p>（3）输入“hexo s”&#x2F;&#x2F;启动服务器预览</p>
-<p>当出现以下结果：</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271450683.png" alt="image-20230727145042485"></p>
-<p>即可用输入127.0.0.1：4000进行预览，查看网页发现结果有刚创立的“test_my_site”，代表网站创立成功，但还无法做到永久网页访问，还要进行以下步骤</p>
-<p>6、配置ssh密钥</p>
-<p>（1）输入“cd ~&#x2F;.ssh”指令来检查本机已存在的密钥</p>
-<p>观察输入后提示，如果输入后，出现如图：</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271458866.png" alt="image-20230727145816429"></p>
-<p>说明你创建过ssh</p>
-<p>如果出现“No such file or directory”,说明你是第一次使用git</p>
-<p>（2）第一次使用则需要输入“ssh-keygen -t rsa -C”自己注册gitthub的邮件地址””</p>
-<p>然后进行三次回车，最终会生成一个.ssh文件，其一般在c盘的用户文件中，当前计算机用户名字命名的文件夹中，打开.ssh\id_rsa.pub文件，记事本打开并复制其中的内容，打开你的github主页</p>
-<p>由于github是全英文，建议装个翻译插件，没装翻译插件就请跟着以下步骤跟我走：</p>
-<p>第一步：点击头像</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271508059.png" alt="image-20230727150843572"></p>
-<p>第二步：找到个人设置并点击</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271512018.png" alt="image-20230727151233050"></p>
-<p>第三步：打开SSH和GPG密钥</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271513647.png" alt="image-20230727151337766"></p>
-<p>第四步：点击new ssh key按钮<img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271519785.png" alt="image-20230727151938225">，在key中输入在.ssh\id_rsa.pub复制的内容</p>
-<p>，再点击Add SSH key<img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271522082.png" alt="image-20230727152206944">，即可添加成功</p>
-<p>（3）尝试SSH连接，测试是否成功</p>
-<p>输入命令“ssh -T <a href="mailto:&#103;&#105;&#x74;&#64;&#x67;&#105;&#x74;&#104;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#103;&#105;&#x74;&#64;&#x67;&#105;&#x74;&#104;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;</a>”#照着这个命令输入即可</p>
-<p>如果提示“Are you sure you want to continue connecting (yes&#x2F;no)?”</p>
-<p>输入“yes”</p>
-<p>如果你看到了下面的这个，就算成功了</p>
-<blockquote>
-<p>“Hi ‘你自己的github账户名’! You’ve successfully authenticated, but GitHub does not provide shell access.”</p>
-</blockquote>
-<p>（4）在创建的目录（blog目录下）下打开cmd（以管理员的身份）</p>
-<p>输入“npm install hexo-deployer-git -save”</p>
-<p>（5）在git命令窗口中</p>
-<p>a.输入“git config –global user.name “你的github用户名””</p>
-<p>b.输入“git config –global user.email “你的github注册邮箱””</p>
-<p>7、准备上传代码</p>
-<p>（1）在github上新建一个数据库，命名为“你的github的用户名.github.io”</p>
-<p>a.点击头像</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307291606795.png" alt="image-20230729160646439"></p>
-<p>b.点击“your repositories”</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271536865.png" alt="image-20230727153616430"></p>
-<p>c.找到并点击“new按钮”</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271537664.png" alt="image-20230727153734316"></p>
-<p>d.在Repository name 存储库名称一栏输入“你的github的用户名.github.io”，然后划到最底下找到“create repository”即可创立</p>
-<p>（2）找到blog目录下的“_config.yml文件”对其就行记事本编辑，找到<img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271542701.png" alt="image-20230727154248591"></p>
-<p>对deploy下的内容进行以下的更改，注意格式 要一模一样</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:你的github用户名/数据库名称.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
-
-<p>8、最后输入“hexo d”上传</p>
-<p>9、在存储库的设置中就可以找到自己的hexo网页了（一般要等3-5分钟才会有）</p>
-<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202307271547069.png" alt="image-20230727154740998"></p>
-<p>10、hexo命令介绍</p>
-<blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br><span class="line">hexo g == hexo generate #生成</span><br><span class="line">hexo s == hexo server #启动服务预览</span><br><span class="line">hexo d == hexo deploy #部署</span><br><span class="line"></span><br><span class="line">hexo server #Hexo会监视文件变动并自动更新，无须重启服务器</span><br><span class="line">hexo server -s #静态模式</span><br><span class="line">hexo server -p 5000 #更改端口</span><br><span class="line">hexo server -i 192.168.1.1 #自定义 IP</span><br><span class="line">hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令</span><br><span class="line">hexo version  #查看Hexo的版本</span><br><span class="line">hexo generate #生成静态页面至public目录</span><br><span class="line"></span><br><span class="line">hexo s -g #生成并本地预览</span><br><span class="line">hexo d -g #生成并上传</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>11、目录结构</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">+– .deploy #hexo deploy生成的文件</span><br><span class="line">+– node_modules #npm组件</span><br><span class="line">+– public #生成的静态网页文件</span><br><span class="line">+–scaffolds #模板</span><br><span class="line">+– source #博客正文和其他源文件</span><br><span class="line">| +– _posts #我们自己写的文章以md结尾</span><br><span class="line">+– themes #主题</span><br><span class="line">+– _config.yml #全局配置文件</span><br><span class="line">– package.json #定义了hexo所需要的各种模块</span><br></pre></td></tr></table></figure>
             
         </div>
     </div>
     <div class="post-tags">
         
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/boke/" style="color: #03a9f4">boke</a>
+        </span>
         
     </div>
     <a href="/2023/07/26/creat_my_boke/" class="go-post">阅读全文</a>
@@ -703,7 +331,7 @@
         <div class="avatar">
             <img src="/images/xiamu.webp" alt="avatar" />
         </div>
-        <div class="name">lihualuomeng</div>
+        <div class="name">梨花落梦</div>
         <div class="description">
             <p>Description<br>a student network engineer</p>
 
@@ -733,7 +361,7 @@
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
-            &commat;lihualuomeng
+            &commat;梨花落梦
         </div>
         <div>
             Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;

@@ -3,10 +3,10 @@
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8" />
-        <title>博客建立过程 | 博客</title>
-        <meta name="author" content="lihualuomeng" />
+        <title>tags | 博客</title>
+        <meta name="author" content="梨花落梦" />
         <meta name="description" content="a ordinary netword engineer" />
-        <meta name="keywords" content="" />
+        <meta name="keywords" content="原神启动" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
         <link rel="icon" href="/images/favicon.png" />
         <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
@@ -28,10 +28,6 @@
 
 
 <script src="/js/lib/preview.js"></script>
-
-
-
-
 
 
 
@@ -145,30 +141,44 @@
 </transition>
 
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-                <div class="article">
-    <div>
-        <h1>博客建立过程</h1>
-    </div>
-    <div class="info">
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/7/26
+                <div id="archives">
+    
+    <div class="categories-tags">
+        
+        
+        <span>
+            <a href="/tags/%E6%83%85%E6%8A%A5/" style="background: #ff7d73">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                情报
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                图床
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/boke/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                boke
+            </a>
         </span>
         
         
     </div>
-    
-    <div class="content" v-pre>
-        
-    </div>
-    
-    
-    
-    
-    
-    
     
 </div>
 
@@ -180,7 +190,7 @@
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
-            &commat;lihualuomeng
+            &commat;梨花落梦
         </div>
         <div>
             Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
@@ -200,12 +210,6 @@
             
         </div>
         <script src="/js/main.js"></script>
-        
-        
-
-
-
-
         
     </body>
 </html>
