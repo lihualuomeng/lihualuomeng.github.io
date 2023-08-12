@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>数据库 | 博客</title>
+        <meta name="author" content="梨花落梦" />
+        <meta name="description" content="a ordinary netword engineer" />
+        <meta name="keywords" content="原神启动" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>博客</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;博客</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>数据库</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/9
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/mysql/" style="color: #ffa2c4">-mysql</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="一、数据库概念基础"><a href="#一、数据库概念基础" class="headerlink" title="一、数据库概念基础"></a>一、数据库概念基础</h1><blockquote>
+<p>1、什么是数据库？<br>    数据库（database）就是存储数据的仓库，数据库是一个以某种有结构的有顺序存储的<br>数据集合，理解数据库的一种最简单的办法是将其想象为一个文件柜。此文件柜是一个<br>存放数据的物理位置，不管数据是什么以及如何组织的。</p>
+</blockquote>
+<span id="more"></span>
+<blockquote>
+<p>2、四大概念<br>(1)数据（Date）：在计算机系统中，各种字母、数字符号的组合、语音、图形、图像等统称为数据。如：图像、语言、文字。<br>(2)数据库（Database）：数据库是按照数据结构来组织、存储和管理数据的“仓库”。如：Access、MSSQL、Oracle、SQLTEL、MySQL等。<br>(3)数据库管理系统（DBMS）：数据库管理系统(database management system)是一种操纵和管理数据库的软件，用于建立、使用和维护数据库。它对数据库进行统一的管理和控制，以保证数据库的安全性和完整性。如：Access、MSSQL、Oracle、SQLTEL、MySQL等系统。<br>(4)结构化查询语言（SQL）：结构化查询语言(Structured Query Language)简称SQL，结构化查询语言是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统。如：DQL、DDL、DML、TCL、DCL。<br>3、数据库管理系统分类<br>(1)关系数据库<br>关系数据库是创建在关系模型基础上的数据库，“一对一、一对多、多对多”等关<br>系模型。借助于集合代数等数学概念和方法来处理数据库中的数据。现实世界中的各种<br>实体以及实体之间的各种联系均用关系模型来表示。<br>几乎所有的数据库管理系统都配备了一个开放式数据库连接（ODBC）驱动程序，令<br>各个数据库之间得以互相集成。<br>关系型数据库是一个结构化的数据库，创建在关系模型（二维表格模型）基础上，一般面<br>向于记录。<br>SQL 语句（标准数据查询语言）就是一种基于关系型数据库的语言，用于执行对关系型数<br>据库中数据的检索和操作。<br>主流的关系型数据库包括 Oracle、MySQL、SQL Server、Microsoft Access、DB2 等。<br>安全系数高，容易理解，比较浪费磁盘空间。<br>典型代表有：MySQL、Oracle、Microsoft SQL Server、Access及PostgreSQL等。<br>(2)非关系型数据库(NoSQL)<br>非关系型数据库是对不同于传统的关系数据库的数据库管理系统的统称。与关系数<br>据库最大的不同点是不使用SQL作为查询语言。<br>NoSQL(NoSQL &#x3D; Not Only SQL )，意思是“不仅仅是 SQL”，是非关系型数据库的总<br>称。<br>除了主流的关系型数据库外的数据库，都认为是非关系型。<br>主流的 NoSQL 数据库有 Redis、MongBD、Hbase、CouhDB 等。<br>安全系数低，效率高。<br>典型代表有：BigTable（Google）、Cassandra、MongoDB、CouchDB；<br>还包括键值数据库：Apache Cassandra（Facebook）、LevelDB（Google)。<br>(3)区别<br>关系型数据库：<br>实例–&gt;数据库–&gt;表(table)–&gt;记录行(row)、数据字段(column)<br>非关系型数据库：<br>实例–&gt;数据库–&gt;集合(collection)–&gt;键值对(key-value)<br>非关系型数据库不需要手动建数据库和集合（表）。<br>4、数据库组成<br>(1)表(table)：某种特定类型数据的结构化清单。<br>这里关键的一点在于,存储在表中的数据是一种类型的数据或一个清单。决不应该将顾客的<br>清单与订单的清单存储在同一个数据库表中。这样做将使以后的检索和访问很难。应该创<br>建两个表,每个清单一个表。数据库中的每个表都有一个名字,用来标识自己。此名字是唯<br>一的,这表示数据库中没有其他表具有相同的名字。<br>(2)列( column)：表中的一个字段。所有表都是由一个或多个列组成的。<br>(3)行(row)：表中的一个记录。<br>(4)主键（primary key）：一列（或一组列），其值能过唯一区分表中的每<br>个行。<br>5、常见数据库<br>(1)MySQL (默认端口号为3306)：MySQL是一个关系型数据库管理系统，由瑞典MySQL AB 公司开发，属于Oracle旗下产品。MySQL是最流行的关系型数据库管理系统之一，再WEB应用方面，MySQL是最好的RDBMS（Relational Database Management System，关系型数据库管理系统）应用软件之一。<br>MySQL是一种关系型数据库管理系统，关系数据库将数据保存在不同的表中，而不是将所有的数据放在一个大仓库内，这样就增加了速度并提高了灵活性。<br>MySQL5.0增加information——schema系统数据库MySQL。<br>(2)SQL Server（默认端口为1433）：SQL Server是Microsoft公司推出的关系型数据库管理系统。<br>具有使用方便、可伸缩性好和相关软件集成程度高等优点。可跨越从运行Microsoft Windows 98的膝上电脑到运行Microsoft。<br>Windows2012的大型多处理器的服务器等多种平台使用。<br>Microsoft SQL Server是一个全面的数据库平台，使用集成<br>(3)Oracsle(默认端口号为1521)：Oracle是在数据库领域一致处于领先地位的产品。可以说Oracle数据库系统是世界上流行的关系数据库管理系统，系统可移植性好、使用方便、功能强，适用于各类大、中、小微机环境。它是一种高效率的、可靠性好的、适应高吞吐量的数据库方案。<br>优点：可用性强，可扩展性强，数据安全性强和稳定性强。<br>6、数据库与它的端口<br>（1）关系型数据库<br>a.MySQL数据库–&gt;3306;<br>b.Oracle数据库–&gt;1521;<br>c.Sql Server数据库–&gt;1433;<br>d.DB2数据库–&gt;5000;<br>e.PostgreSQL数据库–&gt;5432;<br>f.国产的DM达梦数据库–&gt;5236。<br>（2）非关系型数据库<br>a.Redis数据库–&gt;6379；<br>b.Memcached数据库–&gt;11211<br>c.MongoDB数据库–&gt;27017,28017(做web管理页面)<br>7、数据库管理工具：NavicatPremium<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308110914056.png" alt="image-20230811091438965"></p>
+</blockquote>
+<h1 id="二、SQL语句简介"><a href="#二、SQL语句简介" class="headerlink" title="二、SQL语句简介"></a>二、SQL语句简介</h1><blockquote>
+<p>1、简介<br>（1）SQL（Structured Query Language 结构化查询语句）是一种特定母的程序语言，用于管理关系数据库管理系统（RDBMS），或在关系流数据管理系统（RDSMS）中进行流处理。SQL让您可以访问和处理数据库，包括数据插入、查询、更新和删除。SQL在1986年成为ANSI（American National Standards Institute 美国国家标准化组织）的一项标准，在1987年成为国际标准化组织（ISO）标准。<br>（2）SQL标准化过程</p>
+<table>
+<thead>
+<tr>
+<th>年份</th>
+<th align="center">名字</th>
+<th align="center">别名</th>
+<th align="center">注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1986</td>
+<td align="center">SQL-86</td>
+<td align="center">SQL-87</td>
+<td align="center">ANSI首次标准化</td>
+</tr>
+<tr>
+<td>1989</td>
+<td align="center">SQL-89</td>
+<td align="center">FIPS 127-1</td>
+<td align="center">小修改，增加了integrity constraint</td>
+</tr>
+<tr>
+<td>1992</td>
+<td align="center">SQL-92</td>
+<td align="center">SQL2,FIPS127-2</td>
+<td align="center">大修改，成为现代SQL的基础</td>
+</tr>
+<tr>
+<td>1999</td>
+<td align="center">SQL:1999</td>
+<td align="center">SQL3</td>
+<td align="center">增加了正则表达式匹配、递归查询（传递闭包）、数据库触发器、过程式与控制了语句、非标量类型（arrays）、面向对象特性。在JAVA中嵌入SQL（SQL&#x2F;QLB）及其逆（SQL&#x2F;JRT）</td>
+</tr>
+<tr>
+<td>2003</td>
+<td align="center">SQL:2003</td>
+<td align="center"></td>
+<td align="center">增加了XML相关特性（SQL&#x2F;XML）,window functions、标准化sequence、自动产生值的列。对SQL：1999的新特性重新描述其内涵</td>
+</tr>
+<tr>
+<td>2006</td>
+<td align="center">SQL:2006</td>
+<td align="center"></td>
+<td align="center">导入&#x2F;到处XML数据与SQL数据库。XQuery</td>
+</tr>
+<tr>
+<td>2008</td>
+<td align="center">SQL:2008</td>
+<td align="center"></td>
+<td align="center">在coursor之外的ORDER BY语句。INSTEAD OF触发器。TRUNCATE语句。FETCH子句</td>
+</tr>
+<tr>
+<td>2011</td>
+<td align="center">SQL:2011</td>
+<td align="center"></td>
+<td align="center">增加时态数据（PERIOD FOR）。增加了windows functions与FETCH子句</td>
+</tr>
+<tr>
+<td>2016</td>
+<td align="center">SQL:2016</td>
+<td align="center"></td>
+<td align="center">增加行模式匹配、多态表函数、JSON。</td>
+</tr>
+</tbody></table>
+</blockquote>
+<blockquote>
+<p>（3）SQL用途<br>a.面向数据库执行查询；<br>b.可以从数据库取回数据；<br>c.可在数据库中插入新的记录；<br>d.可更新数据库中的数据；<br>e.可从数据库删除记录；<br>f.可创建数据库；<br>g.可在数据库中创建新表<br>h.可在数据库中创建存储过程；<br>i.可在数据库中创建视图；<br>j.可以设置表、存储过程和视图的权限。<br>(4)SQL优点<br>a.SQL不是某个特地给数据库的供应商专有的语言。几乎所有重要的DBMS都支持SQL，所以，学习此语言是你几乎能与所有数据库打交道。<br>b.SQL简单易学。它的语句全都是由描述性很强的英语单词组成，而且这些单词的数目不多。<br>c.SQK尽管看上去很简单，但它实际上是一种强有力的语言，灵活使用其语言元素，可以进行非常复杂和高级的数据库操作<br>（5）运算符</p>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&#x3D;</td>
+<td>等于</td>
+<td>Author&#x3D;’Alcott’</td>
+</tr>
+<tr>
+<td align="center">&lt;&gt;</td>
+<td>不等于（许多数据库除了支持&lt;&gt;以外还支持！&#x3D;）</td>
+<td>Dept&lt;&gt;’Sales’</td>
+</tr>
+<tr>
+<td align="center">&lt;</td>
+<td>小于</td>
+<td>Hire_Data&gt;’2012-01-31’</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td>大于</td>
+<td>Bonus&lt;50000.00</td>
+</tr>
+<tr>
+<td align="center">&lt;&#x3D;</td>
+<td>小于于等于</td>
+<td>Dependaents &gt;&#x3D;2</td>
+</tr>
+<tr>
+<td align="center">&gt;&#x3D;</td>
+<td>大于等于</td>
+<td>Rate&lt;&#x3D;0.05</td>
+</tr>
+<tr>
+<td align="center">BETWEEN</td>
+<td>在一个范围内</td>
+<td>Cost BETWEEN 100.00 AND 500,00</td>
+</tr>
+<tr>
+<td align="center">LIKE</td>
+<td>字符模式匹配</td>
+<td>First_Name LIKE ‘Will%’</td>
+</tr>
+<tr>
+<td align="center">IN</td>
+<td>等于多个可能的值之一</td>
+<td>DeptCode IN(101,103,209)</td>
+</tr>
+<tr>
+<td align="center">IS或IS NOT</td>
+<td>与空值（数据缺失）比较</td>
+<td>Address IS NOT NULL</td>
+</tr>
+<tr>
+<td align="center">IS NOT DISTINCT FROM</td>
+<td>等于值或均为控制（数据缺失）</td>
+<td>Debt IS NOT DISTINCT  FRCM -Receivables</td>
+</tr>
+<tr>
+<td align="center">AS</td>
+<td>用于查看结果是更改字段名称</td>
+<td>SELECT  employee AS ‘departmentl’</td>
+</tr>
+<tr>
+<td align="center">(6)空值与三值逻辑</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">SQL中引入了空值的概念，用来处理关系模型中缺少信息的情况。NULL一词表示空白值，</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">是SQL中的保留词。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">如果Null进行比较，例如在WHERE子句中使用“&#x3D;”判断相等，那么会返回未知值，而</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">SELECT语句只会返回</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">WHERE子句条件为真（TRUE）的结果，不会返回条件为假（FALSE）或未知的结果。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">“真”、“假”以及与空值直接比较时所得到的“未知”共同组成了SQL的three-valued logic 三</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">值逻辑。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">（7）数据类型</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">a.字符串</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">-CHARACTER或CHAR:宽度为n的定长字符串。如果内容长度不足，则以空格填充;</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">-CHARACTER VARYING或VARCHAR:最长为n个字符的可变宽度字符串；</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">-NATIONAL CHARACTER VARYING或NVAR：可变宽度的NCHAR字符串；</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">-NATIONAL CHARACTER或NCHAR：支持国际字符集的固定宽度字符串；</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">b.Bit类型</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">-BIT：n比特Bit类型</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">-BIT VARYING：最大长度为n的bit类型</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">c.数值型</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">-整数：包括SMALLINT、INTEGER和BIGINT，可表示的数据范围从小到大。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">-小数：包括FLOAT,REAL和DOUBLE PRECISION,可表示的数据范围从小到大。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">-定点数：包括NUMERIC（长度，精度）or DECIMAL（长度，精度）</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">d.日期与时间</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">DATA：日期值（例如 2011-05-03）</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">TIME：时间值（例如 15：51：36）.时间值的粒度通常为100纳秒。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">TIME VITH TIME ZONE或TIMETZ：与TIME相同，但包含时区信息。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">TIMESTAMP：时间戳，同时包含日期和时间（2011-05-03 15：51：36）.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">TIMESTAMO WITH TIME ZCNE或TIMESTAMPTZ：与TIMESTAMP相同，但包含时区信息。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="center">INTERVAL</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</blockquote>
+<h1 id="三、数据库操作"><a href="#三、数据库操作" class="headerlink" title="三、数据库操作"></a>三、数据库操作</h1><p>1、数据库连接<br>指令：mysql -h 主机地址 -u root -p<br>ENTER：密码（默认为root）<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308111643099.png" alt="image-20230811164327193"></p>
+<p>2、列出数据库</p>
+<p>指令：show databases；<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308111646609.png" alt="image-20230811164622203"><br>3、使用数据库<br>指令：use 库名；<br><img src="C:/Users/Lenovo/Desktop/tupian/image-20230811164755790.png" alt="image-20230811164755790"><br>4、删除<br>指令：drop database（table） 库名（表名）；<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308111652719.png" alt="image-20230811165246400"><br>5、创建数据库<br>指令：create database 库名；<br><img src="C:/Users/Lenovo/Desktop/tupian/image-20230811165120351.png" alt="image-20230811165120351"><br>6、显示所有数据表（使用时需要先用use使用库）<br>指令：show tables；<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308111655944.png" alt="image-20230811165526860"><br>7、查看数据表的属性，属性类型，主键信息，是否为NULL，默认值等其他信息。<br>指令1：show columns from 数据表；<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308111703097.png" alt="image-20230811170346320"><br>指令2：desc 数据表。<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308111704511.png" alt="image-20230811170359205"><br>FIeld：列名；<br>Type：数据类型；<br>Null：是否取空值；<br>Key：PRI（主键）、MUL（普通的b-tree索引）、UNI（唯一索引）；<br>Default：默认值；<br>Extra：其他信息。<br>8、详细显示数据表的索引信息，包括primary key（主键）<br>指令：show index from 表名；<br><img src="C:/Users/Lenovo/Desktop/tupian/image-20230811170954849.png" alt="image-20230811170954849"><br>table：表名 ；<br>Non_unique：索引能否重复；<br>Key_name：索引名称；<br>Seq_in_index:索引中的序列号，从一开始；<br>Column_name:列名称；<br>Collation:列以什么方式存储在索引中。’A’（升序）或NULL（无分类）；<br>Cardinality：索引总唯一的数目的估计值；<br>Sub_part:如果列只是被部分编入索引，则为被编入索引地字符地数目。如果整列被编入索引，则为NULL；<br>Packed:指示关键字如何被压缩。如果没有被压缩，则为NULL；<br>NULL：如果列中含有NULL，则含有YES。如果没有，则该列含有NO；<br>Index_type:用过地索引方法；<br>Comment：多种拼注。<br>9、插入语句<br>指令：insert into 表名（变量1，变量2，…，变量n） values （值1，值2，…值n）<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308111725348.png" alt="image-20230811172547335"><br>10、查询表中所有元素<br>指令：select * from 表名<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308111730861.png" alt="image-20230811172950053"><br>11、创建数据表<br>指令：create table 表名（字段名+字段类型+附加条件）；<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308120906597.png" alt="image-20230812090617602"><br>If not exists:判断表是否存在，如果存在，不会报错，也会执行成功；<br>int unsigned:无法好类型。无符号数，都解释为正数；<br>auto_increment:自动递增，默认开始值为1.也可以自己定义auto_increment&#x3D;100；<br>engine&#x3D;InnDB:指定搜索引擎。<br>12、查询语句<br>指令：select 字段名 from表名；<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308120910942.png" alt="image-20230812091048810"><br>13、where子句（附加条件）<br>指令：select 查询内容 from 查询来源 where 条件；<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308120913977.png" alt="image-20230812091309891"><br>where的字符串比较是不区分大小写的。可以使用where binary关键字来设定where子句的字符串比较是区分大小写的。<br>14、update更新<br>指令：update update 表名 set 变量名&#x3D;值；<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308120924846.png" alt="image-20230812092427605"><br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308120924054.png" alt="image-20230812092456905"><br>15、删除<br>指令：delect from 表名（where子句）；<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308120928890.png" alt="image-20230812092851864"><br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308120929790.png" alt="image-20230812092920614"><br>16、限制输出<br>指令：select * from 表名 limit 限制条件；<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308120931144.png" alt="image-20230812093109158"><br>17、模糊匹配like<br>指令：select * from where 变量 like 值的一个字%（%值的一个字）；<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308120936363.png" alt="image-20230812093604219"><br>18、联合语句<br>指令：select column1 ，…column（n） union all&#x2F;distinct select，…column（n）；<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308120942128.png" alt="image-20230812094159917"><br>column：检索列；<br>all：全部输出；<br>distinct：去重输出。<br>注意：前后两个select子句的检索列要相同。<br>19、修改指令<br>指令：alter table 表名 add 列名 数据格式</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308120947615.png" alt="image-20230812094743512"><br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308120948100.png" alt="image-20230812094822433"><br>ALTER 命令非常强大，可以在数据库结构发生变化时进行灵活的修改和调整。当我们需要修改数据表名或者修改数据表字段时，就需要使用到 MySQL ALTER 命令。MySQL 的 ALTER 命令用于修改数据库、表和索引等对象的结构。ALTER 命令允许你添加、修改或删除数据库对象，并且可以用于更改表的列定义、添加约束、创建和删除索引等操<br>20、读取数据按序排列<br>指令：select * from 表 order by 变量 ASC&#x2F;DESC;<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308120949523.png" alt="image-20230812094943411"><br>ASC:顺序排列；<br>DESC：倒序排列。<br>21、分组<br>指令：slect 列名，功能函数 group by 分组依据<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308120954863.png" alt="image-20230812095419955"></p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 博客
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;梨花落梦
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>
