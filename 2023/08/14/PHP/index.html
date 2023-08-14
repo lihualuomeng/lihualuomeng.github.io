@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>PHP详解 | 博客</title>
+        <meta name="author" content="梨花落梦" />
+        <meta name="description" content="a ordinary netword engineer" />
+        <meta name="keywords" content="原神启动" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>博客</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;博客</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>PHP详解</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/14
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="PHP详解"><a href="#PHP详解" class="headerlink" title="PHP详解"></a>PHP详解</h1><h2 id="一、PHP基础语法介绍"><a href="#一、PHP基础语法介绍" class="headerlink" title="一、PHP基础语法介绍"></a>一、PHP基础语法介绍</h2><ul>
+<li>PHP简介<br>1、概述<br>-PHP<br>PHP是Hypertext Preprocessor的缩写，（超文本预处理器）是一种在服务器端运行的开源的脚本语言。    该语言让 WEB 开发人员快速书写动态生成的网页。<br>-LAMP组合(Linux,Apache,MySQL,PHP)，这四个产品都是公开源代码的产品<br>(1)php是一门语言，用来做业务逻辑<br>(2)apache为PHP提供了运行环境<br>(3)linux为Apache的运行提供了平台<br>(4)mysql数据库用来存储数据<br>-wamp组合。<span id="more"></span>
+(1)php是一门语言，用来做业务逻辑<br>(2)apache为PHP提供了运行环境<br>(3)windows为Apache的运行提供了平台<br>(3)mysql数据库用来存储数据<br>-在一个php文件中可以包括以下内容：<br>(1)PHP 文件可包含文本、HTML、JavaScript代码和 PHP 代码<br>(2)PHP 代码在服务器上执行，结果以纯 HTML 形式返回给浏览器<br>(3)PHP 文件的默认文件扩展名是 “.php”<br>-php的使用<br>(1)PHP 可以生成动态页面内容<br>(2)PHP 可以创建、打开、读取、写入、关闭服务器上的文件<br>(3)PHP 可以收集表单数据<br>(4)PHP 可以发送和接收 cookies<br>(5)PHP 可以添加、删除、修改您的数据库中的数据》》》重点<br>(6)PHP 可以限制用户访问您的网站上的一些页面<br>(7)PHP 可以加密数据<br>2、静态网站和动态网站<br>-静态网站特点<br>(1)网页内容一经发布到网站服务器上，无论是否有用户访问，每个静态网页的内容都是保存在服务器上的。也就是说，静态网页是实实在在保存在服务器上的文件，每个网页都是独立存在的文件。<br>(2)静态网页内容相对稳定，容易被搜索引擎检索。<br>(3)静态网页没有数据库的支持，在网站制作和维护方面工作量大，因此当网站信息量很大时完全依靠静态网页制作方式比较困难。<br>(4)静态网页的交互性很差，在功能方面有较大的限制<br>-动态网页的特点<br>(1)交互性:网页会根据用户的要求和选择而动态地改变和响应，浏览器作为客户端，成为一个动态交流的桥梁，动态网页的交互性也是今后 Web 发展的桥梁。<br>(2)自动更新：即无须手动更新 HTML 文档，便会自动生成页面，可以大量节省工作量。<br>(3)因时因人而变：即当不同时间、不同用户访问同一网址时会出现不同页面。<br>3、静态网站和动态网站访问流程</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308121420198.png" alt="image-20230812142033233"></p>
+<p>4、BS架构和CS架构<br>–BS：通过浏览器去访问服务器<br>-b:browser（浏览器）<br>-s:sever(服务器)<br>-优点：<br>(1)只要有浏览器就可以访问<br>(2)开发成本低<br>–缺点：<br>(1)开发的代码都放在服务器上    胖服务器-瘦客户端<br>–CS：通过客户端软件去访问服务器<br>-c:client（客户端）<br>-s:server(服务器)<br>-优点：<br>可以开发客户端和服务器端，这时候就可以实现负载的均衡<br>-缺点：<br>(1)必须要安装一个软件才能去访问<br>(2)开发成本高</p>
+<ul>
+<li>基础语法格式<br>1、PHP标记<br>–PHP 和其他几种 WEB 语言一样，都是使用一对标记将 PHP 代码部分包含起来，以便和 HTML 代码区分。<br>-ASP 风格<br>语法：&lt;% PHP 代码 %&gt;<br>-简短 风格<br>语法：<? PHP 代码 ?><br>-脚本 风格<br>语法：<script language=”php”> PHP代码 </script><br>-XML 风格（标准风格）<br>语法：<?php PHP 代码 ?><br>–说明<br>如果要使用简短风格和ASP风格，需要在 PHP.ini 中对其进行配置，打开 php.ini 文件，将short_open_tag 和 asp_tags 都设置为 ON ，重启 Apache 服务器即可。<br>2、PHP注释<br>–PHP 注释即代码的解释说明，一般放在代码的上方或者尾部（放在尾部时用Tab键进行分割，方便阅读），注释不会影响到程序的执行，因为在执行的时候，注释会被解析器忽略不计。<br>-单行注释（&#x2F;&#x2F;）<br>语法：<?php   //PHP代码  ？>
+-多行注释 （/*......*/）
+语法：<?php /*PHP 代码*/ ?><br>-#风格注释（#）<br>语法：<?php #PHP 代码 ?><br>–注意<br>-多行注释不允许进行嵌套操作<br>-在单行注释中的内容不要出现”?&gt;“标志，因为解析器会认为 PHP  脚本结束，而不去执行 ?&gt; 后面代码。<br>3、PHP语句结束符<br>–PHP 语句分隔符：在 PHP 中，代码是以行为单位，系统需要通过判断行的结束，该结束通常都是一个符号：分号”；“（英文状态下的分号）。<br>举例：<?php
+echo 'hello world';
+?>
+–注意<br>-PHP 中标记结束符  ?&gt; 有自带语句结束符的效果，最后一行 PHP 代码可以没有结束符。<br>-PHP 中其实很多代码的书写都不是嵌入到 HTML 中，而是单独存在，通常书写习惯中不建议使用结束符 ?&gt; ,PHP 会自动开始到最后全部认为是 PHP 代码，从而解析。（好处，减少网络带宽加载多东西）<br>4、PHP输出语句<blockquote>
+<ul>
+<li>echo:输出</li>
+<li>print:输出，输出成功返回1</li>
+<li>print_r()：输出数组，打印变量</li>
+<li>var_dump():输出数据的详细信息，带有数据类型和数据长度<?php
+var_dump('abc');	//string(3) "abc" 
+?></li>
+</ul>
+</blockquote>
+</li>
+<li>基础语法格式(header函数)<br>1、用于设置页面字符编码<?php
+
+  header('Content-Type:text/html;charset=utf-8');</li>
+</ul>
+<p>?&gt;</p>
+<p>2、用于重新导向指定的url<br>&lt;?php</p>
+<pre><code>header(&#39;Location:http://www.baidu.com’);
+</code></pre>
+<p>?&gt;</p>
+<h2 id="二、变量-常量-数据类型-字符串"><a href="#二、变量-常量-数据类型-字符串" class="headerlink" title="二、变量&#x2F;常量&#x2F;数据类型&#x2F;字符串"></a>二、变量&#x2F;常量&#x2F;数据类型&#x2F;字符串</h2><ul>
+<li>变量<br>1、变量概念<br>–PHP 变量是指在程序执行过程中数值可以变化的量。变量通过一个名字（变量名）来标识。系统为程序中的每一个变量分配了一个存储单元，变量名实质上就是计算机内存单元的命名。因此，借助变量名即可访问内存中的数据。<br>-总结<br>(1)变量是可以改变的。<br>(2)变量是存在名字的。<br>(3)变量是用来存储数据的。<br>(4)变量是通过名字来访问数据的。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">举例:</span><br><span class="line">定义变量：在 PHP 中不需要任何关键字定义变量。</span><br><span class="line">$var1;	//定义变量</span><br><span class="line">$var2=2;	//定义变量并赋值</span><br><span class="line">访问变量</span><br><span class="line">echo $var2;	// 通过 var2 变量名字找到存储的内容1，然后输出</span><br><span class="line">修改变量</span><br><span class="line">$var2 = 2;</span><br><span class="line">echo &#x27;&lt;br/&gt;&#x27;,$var2;</span><br><span class="line">删除变量 用unset()来销毁变量，销毁的是变量名，变量值由PHP垃圾回收机制销毁</span><br><span class="line">isset 用来检查变量是否被设置并是否为空（NULL）</span><br></pre></td></tr></table></figure>
+2、变量命名<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">命名规则</span><br><span class="line">- 变量必须以$开头，$符不是变量的一部分，仅表示后面的标识符是变量名。</span><br><span class="line">- 除了$以外，以字母、下划线开头，后面跟着数字、字母、下划线。</span><br><span class="line">-  变量名区分大小写，$aa和$Aa是两个空间。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">举例</span><br><span class="line">+ $a	合法</span><br><span class="line">+ $a1	合法</span><br><span class="line">+ $_1a	合法</span><br><span class="line">+ $1a	不合法</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<ul>
+<li>预定义变量<br>提前定义的变量，系统定义的变量，存储许多需要用的数据（预定义变量都是数组）。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">举例：</span><br><span class="line">- $_GET：		获取所有表单以 get 方式提交的数据。</span><br><span class="line">- $_POST：		POST 提交的数据都会保存在此。</span><br><span class="line">- $_REQUEST：	GET 和 POST 提交的都会保存。</span><br><span class="line">- $GLOBALS：	PHP中所有的全局变量</span><br><span class="line">- $_SERVER：	服务器信息</span><br><span class="line">- $_SESSION：	session会话数据</span><br><span class="line">- $COOKIE：	cookie 会话数</span><br><span class="line">- $_ENV：		环境信息</span><br><span class="line">- $__FILES：	用户上传的文件信息</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>可变变量<br>1、将一个变量赋值给另一个变量：变量传值<br>2、变量传值一共有两种方式：值传递，引用传递（地址传递）<br>(1)值传递：将变量保存的值赋值一份然后将新的值给另外一个变量保存：两个变量使用各自的内存，互不干扰（两个变量没有关系）。<br>(2)引用传递：将变量保存的值所在的内存地址，传递给另外一个变量：两个变量指向同一块内存空间（两个变量是同一个值）。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">传值:将一个表达式的值赋予另一个变量时,改变其中一个变量的值,将不会影响到另一个变量.拷贝新的内存</span><br><span class="line">传址:引用赋值,指 新的变量简单的引用了原始变量.改变新的变量将影响到原始变量,反之亦然.</span><br></pre></td></tr></table></figure>
+-值传递&#x2F;址传递<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308121704315.png" alt="image-20230812170424194"><br>-常量<br>1、概念： PHP 常量可以理解为值不变的量。常量被定义后，在脚本的其他任何地方都不能改变；一个常量由英文字母、下划线和数字组成，但数字不可以做为首字母出现。<br>2、定义形式：<br>(1)使用定义常量函数：define(常量名，值，[是否区别大小写])  true表示不区分大小写，默认是false;常量名称默认大写。<br>(2)PHP5.3以后可以使用 const 定义常量：const 常量名&#x3D;’常量值’;<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//true表示不区分大小写，默认是区分大小写的</span><br><span class="line">define(&#x27;NAME&#x27;,&#x27;tom&#x27;);		//定义常量</span><br><span class="line">define(&#x27;PI&#x27;,3.14,true);		//定义常量,不区分大小写</span><br><span class="line">echo NAME,&#x27;&lt;br&gt;&#x27;,Pi;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">定义常量可以用特殊字符，但是在调用的时候必须用`constant`关键字调用</span><br><span class="line">define(&#x27;%-%&#x27;,&#x27;tom&#x27;);</span><br><span class="line">echo constant(&#x27;%-%&#x27;);		//通过constant获取特殊字符作为常量名的常量</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">还可以使用const关键字定义常量</span><br><span class="line">const NAME=&#x27;tom&#x27;;</span><br><span class="line">echo NAME;		//tom</span><br></pre></td></tr></table></figure>
+-预定义常量<br>PHP预定义了许多常量，这些常量无需使用define()函数定义，可直接在程序中使用；下面列举了一些常用的PHP预定义常量。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">预定义常量</span><br><span class="line">- echo PHP_VERSION,&#x27;&lt;br&gt;&#x27;;		//PHP版本号</span><br><span class="line">- echo PHP_OS,&#x27;&lt;br&gt;&#x27;;			//PHP操作系统</span><br><span class="line">- echo PHP_INT_MAX,&#x27;&lt;br&gt;&#x27;;		//PHP中整型的最大值</span><br><span class="line">- echo DIRECTORY_SEPARATOR；    //表示目录分隔符，UNIX或Linux操作系统环境时的值为“ / ”, Window操作系统环境时的值为 “ \ ”。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">魔术常量</span><br><span class="line">- echo __LINE__,&#x27;&lt;br&gt;&#x27;;		//获取当前行号</span><br><span class="line">- echo __FILE__,&#x27;&lt;br&gt;&#x27;;		//文件的完整路径和文件名</span><br><span class="line">- echo __DIR__,&#x27;&lt;br&gt;&#x27;;		//文件所在的目录</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<img src="C:\Users\Lenovo\Desktop\tupian\image-20230812171152152.png" alt="image-20230812171152152"><br>–数据类型<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">概念：</span><br><span class="line">在PHP中指的是存储的数据本身类型，而不是变量类型。PHP是一种弱类型语言，变量本身没有数据类型PHP 支持8种类型，包括：</span><br><span class="line">- 4种标量类型，即boolean（布尔型）、integer（整型）、float/doule（浮点型）和string（字符串类型）；</span><br><span class="line">- 2种复合类型，即array（数组）和object（对象）；</span><br><span class="line">- 2种特殊类型，即resource（资源）和null。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">类型判断：</span><br><span class="line">- 通过一组类型判断函数，来判断变量，最终返回这个变量所保存数据的数据类型（相同结果为 true，失败为 false）：是一组以 is_开头后面跟类型名字的函数：is_类型(变量名)</span><br><span class="line">- Bool类型不能用 echo 来查看，可以使用 var_dump结构查看：var_dump(变量1，变量2,...)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">举例：</span><br><span class="line">$a = 1;</span><br><span class="line">var_dump(is_int($a))  // True</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">说明：</span><br><span class="line">PHP 中变量的类型不是由程序员决定的，确切的说，是 PHP 根据变量使用的上下文在运行时决定的.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+–标量数据类型</li>
+<li>概念：<br>标量数据类型是数据结果中的基本单位，只能存储一个数据<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141054061.png" alt="image-20230814105438452"><br>–整数<br>-概念</li>
+<li>整数类型：保存整数类型（范围限制），4个字节存储数据，范围-2147483648~+214786347</li>
+<li>整数可以用十进制，八进制和十六进制表示。如果八进制，数字前面必须加0；如果十六进制，则需要用0x。。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">举例</span><br><span class="line"></span><br><span class="line">$num1=10;		//十进制</span><br><span class="line">$num2=010;		//八进制（数字前面加0）</span><br><span class="line">$num3=0x10;		//十六进制（数字前面加0x）</span><br><span class="line"></span><br><span class="line">echo $num1,&#x27;&lt;br&gt;&#x27;;	//10</span><br><span class="line">echo $num2,&#x27;&lt;br&gt;&#x27;;	//8</span><br><span class="line">echo $num3;		//16</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+–整数的进制转换</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141101147.png" alt="image-20230814110123904"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">举例：</span><br><span class="line">echo decbin(123),&#x27;&lt;br&gt;&#x27;;               //十进制转二进制</span><br><span class="line">echo bindec(1111011),&#x27;&lt;br&gt;&#x27;;	//二进制转十进制</span><br><span class="line">echo dechex(123),&#x27;&lt;br&gt;&#x27;;		//十进制转十六进制</span><br><span class="line">echo hexdec(&#x27;7b&#x27;),&#x27;&lt;br&gt;&#x27;;		//十六进制转十进制</span><br><span class="line">echo decoct(123);		//十进制转八进</span><br></pre></td></tr></table></figure>
+<p>–浮点型<br>概念：<br>  浮点型：小数类型以及超过整型所能够存储的范围整数（不保证精度）。精度范围大概在15个有效数字左右。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">定义方式</span><br><span class="line">$f =1.23;</span><br><span class="line">$f = 1.23e10;  //科学计数法，其中e表示小数点后面10位</span><br><span class="line">不要用浮点数去做精度判断：浮点数保存的数据不够精确。</span><br><span class="line">$f1 = 0.7;</span><br><span class="line">$f2 = 2.1;</span><br><span class="line">$f3 = $f2 / 3;</span><br><span class="line"></span><br><span class="line">if ($f3==$f1) &#123;</span><br><span class="line">	echo &quot;对&quot;;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">	echo &quot;错&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>–字符串类型<br>概念：<br>    字符串是连续的字符序列，由数字、字母和符号组成。字符串中的每个字符只占用一个字节。在PHP中，有三种定义字符串的方式，分别是单引号 ‘ 、双引号 “”和定界符 &lt;&lt;&lt;。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">+ 在PHP中单引号字符串和双引号字符串是有区别的，单引号字符串是真正的字符串，双引号字符串要解析字符串中的变量</span><br><span class="line">$name=&#x27;tom&#x27;;</span><br><span class="line">echo &#x27;我的名字叫$name&#x27;,&#x27;&lt;br&gt;&#x27;;	//我的名字叫$name</span><br><span class="line">echo &quot;我的名字叫$name&quot;,&#x27;&lt;br&gt;&#x27;;	//我的名字叫tom</span><br><span class="line">+ &#123;  &#125;取变量</span><br><span class="line">$name=&#x27;tom&#x27;;</span><br><span class="line">echo &#x27;$name是我的名字&#x27;,&#x27;&lt;br&gt;&#x27;;	//$name是我的名字</span><br><span class="line">echo &quot;&#123;$name&#125;是我的名字&quot;,&#x27;&lt;br&gt;&#x27;;	//&#123;&#125;表示获取变量的值（tom是我的名字）</span><br><span class="line">echo &quot;$&#123;name&#125;是我的名字&quot;,&#x27;&lt;br&gt;&#x27;;	//$和&#123;只要挨着一起就可以（tom是我的名字）</span><br><span class="line">+ 输出特殊字符</span><br><span class="line">echo &#x27;毛主席说：\&#x27;上课不要睡觉\&#x27;&#x27;,&#x27;&lt;br&gt;&#x27;;	//转义字符   毛主席说：&#x27;上课不要睡觉&#x27;</span><br><span class="line">echo &#x27;文件保存在c:\\&#x27;;                                          //文件保存在c:\</span><br></pre></td></tr></table></figure>
+<p>定界符的作用：<br>(1)PHP定界符的作用就是按照原样，包括换行格式什么的，输出在其内部的东西<br>(2)在PHP定界符中的任何特殊字符都不需要转义<br>(3)PHP定界符中的PHP变量会被识别，并用变量本身的值替换<br>语法：<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141447458.png" alt="image-20230814144754600"><br>注意：<br>EOF可以用任意其他字符代替，只需保证结束表示与开始标识一致，并且开始表姐和结束标记不再正文中出现即可<br>结束表示必须顶格独自占一行（即必须从行首开始，前后不能衔接任何空白和字符）<br>实例：<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141450574.png" alt="image-20230814145025814"></p>
+<h2 id="三、运算符"><a href="#三、运算符" class="headerlink" title="三、运算符"></a>三、运算符</h2><p>–运算符的简介<br>概念：<br>运算符是用来对变量，常量或数据进行计算的符号，它对一个值或一组值执行一个指定的操作。PHP 的运算符主要包括算数运算符、字符串运算符、赋值运算符、位运算符、逻辑运算符、比较运算符、递增或递减运算符和条件运算符。这里只介绍一些常用的运算符。<br>–算数运算符<br>概念：<br>算数运算符（Arithmetic Operators）是处理四则运算的符号，在数字的处理中应用的最多<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141452733.png" alt="image-20230814145230217"><br>注意：在算数运算符中使用 % 求余，如果被除数是负数，那么取得的结果也是一个负值。<br>–递增递减运算符<br>递增递减运算符有两种使用方法：</p>
+<ul>
+<li><p>一种是将运算符放在变量前面，即先将变量作加 1 或减 1 的运算后再将值赋给原变量，叫做前置递增或者递减运算符。</p>
+</li>
+<li><p>一种是将运算符放在变量后面，即先返回变量的当前值，然后变量的当前值作加 1 或减 1的运算，叫做后置递增或递减运算符。<br>例1：</p>
+</li>
+<li><p>++前置：先自增再运算<br>$num&#x3D;10;<br>echo ++$num;   &#x2F;&#x2F;11</p>
+</li>
+<li><p>后置++：先运算再自增<br>echo $num++;   &#x2F;&#x2F;11<br>例2：</p>
+</li>
+<li><p>$num&#x3D;4;</p>
+</li>
+<li><p>echo (++$num)+(++$num)+(++$num);</p>
+</li>
+</ul>
+<p>	</p>
+<hr>
+<ul>
+<li><?php
+</li>
+<li><p>$num&#x3D;4;</p>
+</li>
+<li><p>echo ($num++)+($num++)+($num++);	<br>–比较运算符（关系运算符）<br>概念：<br> 比较运算：比较两个数据的大小，或者两个内容是否相同，返回的结果都是布尔类型：满足返回true，不满足返回false。<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141455150.png" alt="image-20230814145543330"><br>–逻辑运算符<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141456404.png" alt="image-20230814145631130"><br>例：</p>
+</li>
+<li><p>$num&#x3D;1;</p>
+</li>
+<li><p>if($num &gt; 11 || $num &lt; 0)</p>
+</li>
+<li><p>echo ‘1’;</p>
+</li>
+<li><p>else</p>
+</li>
+<li><p>echo “0”;<br>–字符串运算符（@）<br>字符串运算符<br>字符串运算符只有一个，即英文的句号”.”,他将两个字符串连接起来</p>
+</li>
+<li><p>echo ‘aa’.’bb’;		&#x2F;&#x2F;字符串链接	aabb<br>错误抑制符(@)<br>在 PHP 中明知有些错误会报错，但不想让他报错，就用到了错误抑制符(@)<br>$a &#x3D; 10;<br>$b &#x3D; 0;<br>echo @($a&#x2F;$b);<br>–三元运算符<br>(expr1) ? (expr2) : (expr3)<br>对 expr1 求值为 TRUE 时的值为 expr2，在 expr1 求值为 FALSE 时的值为 expr3<br>–运算符的优先级</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141501361.png" alt="image-20230814150110923"></p>
+</li>
+</ul>
+<h2 id="四、PHP控制语句"><a href="#四、PHP控制语句" class="headerlink" title="四、PHP控制语句"></a>四、PHP控制语句</h2><p>–流程控制<br>概念：<br>流程控制：代码执行的方向<br>流程控制的分类：</p>
+<ul>
+<li><p>顺序结构：代码从上往下，顺序执行。（代码执行的最基本结构）</p>
+</li>
+<li><p>分支结构（条件控制语句）：给定一个条件，同时有多种可执行代码（块），然后会根据条件执行某一段代码</p>
+</li>
+<li><p>循环结构（循环控制语句）：在某个条件控制范围内，指定的代码（块）可以重复执行<br>–条件控制语句<br>简介：<br>条件控制语句主要有4种，分别是：</p>
+</li>
+<li><p>if 语句 - 在条件成立时执行代码</p>
+</li>
+<li><p>if…else 语句 - 在条件成立时执行一块代码，条件不成立时执行另一块代码</p>
+</li>
+<li><p>if…elseif….else 语句 - 在若干条件之一成立时执行一个代码块</p>
+</li>
+<li><p>switch 语句 - 在若干条件之一成立时执行一个代码块<br>如果语句为仅当指定条件成立时执行代码那么就可以直接使用if<br>语法：<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141503165.png" alt="image-20230814150319922"><br>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$t=date(&quot;H&quot;);</span><br><span class="line">if ($t&lt;&quot;20&quot;)</span><br><span class="line">&#123;</span><br><span class="line">   echo &quot;Have a good day!&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>–条件控制语句(if..else)<br>在条件成立时执行一块代码，条件不成立时执行另一块代码，使用 if….else 语句<br>语法：<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141504749.png" alt="image-20230814150421491"><br>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">header(&quot;Content-Type:text/html;charset=utf-8&quot;);</span><br><span class="line">$num = rand(1,10);                 //rand()函数是生成随机数</span><br><span class="line">if ($num % 2 == 0)&#123;</span><br><span class="line">echo &quot;$num&quot;.&#x27;&lt;br&gt;&#x27;;</span><br><span class="line">echo &#x27;$num 为偶数&#x27;;</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">echo &quot;$num&quot;.&#x27;&lt;br&gt;&#x27;;</span><br><span class="line">echo &#x27;$num 为奇数&#x27;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>–条件控制语句(if..elseif..else)<br>在若干条件之一成立时执行一个代码块，使用 if….elseif…else 语句.<br>语法：<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141505036.png" alt="image-20230814150523400"><br>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">header(&quot;Content-Type:text/html;charset=utf-8&quot;);</span><br><span class="line">$num = rand(1,10);</span><br><span class="line">if ($num % 2 == 0)&#123;</span><br><span class="line">	echo &quot;$num&quot;.&#x27;&lt;br&gt;&#x27;;</span><br><span class="line">	echo &#x27;$num 为偶数&#x27;;</span><br><span class="line">&#125;elseif($num % 2 !== 0)&#123;</span><br><span class="line">	echo &quot;$num&quot;.&#x27;&lt;br&gt;&#x27;;</span><br><span class="line">	echo &#x27;$num 为奇数&#x27;;</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">	echo &#x27;数据错误&#x27;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>–条件控制语句(switch)<br>有一组情形存在，通过一条件，通常有多个值，但是每一个值都会有对应不同的代码要执行<br>语法：<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141507524.png" alt="image-20230814150710268"><br>注意：<br> 在switch中，如果条件匹配成功，那么系统就不会再次匹配条件，会自动顺序执行向下的所有代码（case代码除外），需要中断执行：break表示中断switch（结束）。<br>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$favcolor=&quot;red&quot;; </span><br><span class="line">switch ($favcolor) </span><br><span class="line">&#123; </span><br><span class="line">case &quot;red&quot;: </span><br><span class="line">	echo &quot;你喜欢的颜色是红色!&quot;; </span><br><span class="line">	break; </span><br><span class="line">case &quot;blue&quot;: </span><br><span class="line">	echo &quot;你喜欢的颜色是蓝色!&quot;; </span><br><span class="line">	break; </span><br><span class="line">case &quot;green&quot;: </span><br><span class="line">	echo &quot;你喜欢的颜色是绿色!&quot;; </span><br><span class="line">	break; </span><br><span class="line">default: </span><br><span class="line">	echo &quot;你喜欢的颜色不是 红, 蓝, 或绿色!&quot;; </span><br><span class="line">&#125; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>–循环控制语句<br>概念：<br>循环结构：代码段在一定的控制下，可以多次执行<br>循环结构分类：</p>
+</li>
+<li><p>For循环：通过条件、起始和终止判断执行</p>
+</li>
+<li><p>While循环：通过判断条件终止</p>
+</li>
+<li><p>Do-while循环：跟while差不多</p>
+</li>
+<li><p>Foreach循环：专门针对数组<br>–循环控制语句(for)<br>概念：<br>for 循环用于你预先知道脚本需要运行的次数的情况下<br>语法：<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141509219.png" alt="image-20230814150918054"><br>参数：</p>
+</li>
+<li><p>初始值：主要是初始化一个变量值，用于设置一个计数器（但可以是任何在循环的开始被执行一次的代码）。</p>
+</li>
+<li><p>条件：循环执行的限制条件。如果为 TRUE，则循环继续。如果为 FALSE，则循环结束。</p>
+</li>
+<li><p>增量：主要用于递增计数器（但可以是任何在循环的结束被执行的代码）。<br>例子1：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for($i=1;$i&lt;=10;$i+=2)&#123;</span><br><span class="line">	echo $i;</span><br><span class="line">&#125; </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>例子2：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for循环来计算10以内的阶加</span><br><span class="line">$sum = 0;</span><br><span class="line">for($i = 1;$i &lt;= 10;$i++)&#123;</span><br><span class="line">	$sum += $i;</span><br><span class="line">&#125;</span><br><span class="line">echo $sum;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>–循环控制语句(for循环之死循环)<br>例子1：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for($i=1;$i&lt;=10;)&#123;</span><br><span class="line">	echo “$i”;	</span><br><span class="line">&#125;</span><br><span class="line">//死循环，$i永远等于1，1永远小于10，条件永远为true</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>例子2：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//只要没有条件都是死循环</span><br><span class="line">for($i=1; ;$i++)&#123;</span><br><span class="line">	echo &quot;$i&quot;.&#x27;&lt;br&gt;&#x27;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>例子3：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//无条件，无增量</span><br><span class="line">for(;;)&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>–循环控制语句(while)<br>概念：<br>while 循环将重复执行代码块，直到指定的条件不成立<br>语法：<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141512912.png" alt="image-20230814151248433"><br>例子：<br>&#x2F;&#x2F;实现10以内的偶数的输出。1~10依次判断是否为偶数,如果是，则输出；如果不是则继续判断<br>$i &#x3D; 1;<br>while($i &lt;&#x3D; 10){<br>  if ($i %2 &#x3D;&#x3D; 0){<br>  echo $i;<br>  }<br>  $i++;<br>}</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141514220.png" alt="image-20230814151444118"><br>–循环控制语句(do..while)<br>概念：<br>do…while 语句会至少执行一次代码，然后检查条件，只要条件成立，就会重复进行循环<br>       两者的区别在于，do…while 要比 while 语句多循环一次。当 while 表达式的值为假时，while 循环直接跳出当前循环；而 do…while 语句则是先执行在判断<br>语法：<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141513877.png" alt="image-20230814151349590"><br>例子：<br>&#x2F;&#x2F;实现10以内的偶数的输出。1<del>10依次判断是否为偶数,如果是，则输出；如果不是则继续判断<br>$i &#x3D; 1;<br>do{<br>    if ($i %2 &#x3D;&#x3D; 0){<br>        echo $i;<br>    }<br>    $i++;<br>}while ($i &lt;&#x3D; 10);<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141514283.png" alt="image-20230814151416282"><br>–循环控制语句(do..while)<br>概念：<br>do…while 语句会至少执行一次代码，然后检查条件，只要条件成立，就会重复进行循环<br>       两者的区别在于，do…while 要比 while 语句多循环一次。当 while 表达式的值为假时，while 循环直接跳出当前循环；而 do…while 语句则是先执行在判断<br>语法：<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141516797.png" alt="image-20230814151609480"><br>例子：<br>&#x2F;&#x2F;实现10以内的偶数的输出。1</del>10依次判断是否为偶数,如果是，则输出；如果不是则继续判断<br>$i &#x3D; 1;<br>do{<br>    if ($i %2 &#x3D;&#x3D; 0){<br>        echo $i;<br>    }<br>    $i++;<br>}while ($i &lt;&#x3D; 10);<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141516941.png" alt="image-20230814151631505"><br>–跳转语句(break)<br>概念：</p>
+<ul>
+<li>Break 关键字可以终止当前的循环，包括while、do…while、for、foreach和switch 在内的所有控制语句</li>
+<li>Break 语句不仅可以跳出当前的循环，还可以指定跳出几重循环<br>例子1：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for($i=1; $i&lt;=10; $i++) &#123;</span><br><span class="line">	if($i==5)</span><br><span class="line">		break;  //中断循环</span><br><span class="line">	echo $i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+例子2：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">for($i=1; $i&lt;=10; $i++) &#123;</span><br><span class="line">	switch($i)&#123;</span><br><span class="line">		case 5:</span><br><span class="line">			echo $i,&#x27;&lt;br&gt;&#x27;;</span><br><span class="line">		break ;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>–跳转语句(continue)<br>概念：</p>
+<ul>
+<li>continue 关键字没有 break 强大，它只能终止本次循环而进入到下次循环中</li>
+<li>continue 也可以指定跳出几重循环</li>
+<li>如果在非循环结构中(例如if语句中，switch语句中)使用continue，程序将会出错<br>例子1：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for($i=1; $i&lt;=10; $i++) &#123;</span><br><span class="line">	if($i==5)</span><br><span class="line">		continue;  //跳出5，进入6循环</span><br><span class="line">	echo $i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="五、PHP函数"><a href="#五、PHP函数" class="headerlink" title="五、PHP函数"></a>五、PHP函数</h2><p>–函数简介<br>概念：<br>       函数：function，是一种语法结构，将实现某一个功能的代码块（多行代码）封装到一个结构中，从而实现代码的重复利用（复用）<br>PHP 拥有超过 1000 个内置的函数<br>PHP 用户定义函数：</p>
+<ul>
+<li>除了内置的 PHP 函数，我们可以创建我们自己的函数</li>
+<li>函数是可以在程序中重复使用的语句块</li>
+<li>页面加载时函数不会立即执行</li>
+<li>函数只有在被调用时才会执行<br>语法：</li>
+<li>function 函数名(参数1，参数2，…){<br>  &#x2F;&#x2F;函数体<br>}</li>
+<li>function：为声明自定义函数的关键词。</li>
+<li>函数名：为自定义函数的名称。</li>
+<li>参数：为自定义参数的名称。</li>
+<li>函数体：为自定义函数的主体，是功能实现的部分。<br>–函数调用<br>当函数被定义好后，所要做的就是调用这个函数，调用函数操作十分简单，只需要引用函数名称并赋予正确的参数即可完成函数的调用</li>
+</ul>
+<p>例题一</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">定义一个 example函数名的函数，计算传入值的平方，然后连同表达式和结果全部输出。</span><br><span class="line">function example($num)&#123;</span><br><span class="line">	echo &quot;$num * $num=&quot;.$num*$num;</span><br><span class="line">&#125;</span><br><span class="line">example(4);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>例题二</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">将函数名存储到变量中</span><br><span class="line">function example($num)&#123;</span><br><span class="line">	echo &quot;$num * $num=&quot;.$num*$num;&#125;</span><br><span class="line">$var =&#x27;example&#x27;;</span><br><span class="line">$var(1);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>–函数间传递参数<br>概念：<br>当调用函数时，需要函数传递参数，被传入的参数称之为实参，而函数定义的参数为形参<br>传递参数的方式：</p>
+<ul>
+<li>按值传递</li>
+<li>按引用传递</li>
+<li>默认参数<br>–按值传递方式<br>将实参的值复制到对应的形参中，在函数体内部操作针对形参 进行，操作的结果不会影响到实参，即函数返回后，实参的值不会改变</li>
+</ul>
+<p>例题一</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function fun($num1,$num2) &#123;</span><br><span class="line">	echo $num1+$num2;</span><br><span class="line">&#125;</span><br><span class="line">fun(10,20);		//30</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>例题二</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function example($num)&#123;</span><br><span class="line">	echo &quot;$num * $num=&quot;.$num*$num;</span><br><span class="line">&#125;</span><br><span class="line">$num = 2；</span><br><span class="line">example($num);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>–值传递和地址传递<br>      将实参的值复制到对应的形参中，在函数体内部操作针对形参 进行，操作的结果不会影响到实参，即函数返回后，实参的值不会改变。<br>例题一</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">值传递</span><br><span class="line">$num=10;</span><br><span class="line">function fun($args) &#123;</span><br><span class="line">	$args=100;</span><br><span class="line">&#125;</span><br><span class="line">fun($num);</span><br><span class="line">echo $num;		//10</span><br></pre></td></tr></table></figure>
+<p>例题二</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">地址传递</span><br><span class="line">$num=10;</span><br><span class="line">//地址传递</span><br><span class="line">function fun(&amp;$args) &#123;   //&amp;符表示取地址</span><br><span class="line">	$args=100;</span><br><span class="line">fun($num);</span><br><span class="line">echo $num;		//100</span><br></pre></td></tr></table></figure>
+<p>(3))默认参数<br>      还有一种设置参数的方式，即可选参数。可以指定某个参数为可选参数，将可选参数放在参数的末尾，并且给它一个默认值<br>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//参数的默认值</span><br><span class="line">function fun($name,$add=&#x27;地址不详&#x27;) &#123;</span><br><span class="line">	echo &#x27;姓名：&#x27;.$name,&#x27;&lt;br&gt;&#x27;;</span><br><span class="line">	echo &#x27;地址：&#x27;.$add,&#x27;&lt;hr&gt;&#x27;;</span><br><span class="line">&#125;</span><br><span class="line">//测试</span><br><span class="line">fun(&#x27;tom&#x27;,&#x27;北京&#x27;);</span><br><span class="line">fun(&#x27;berry&#x27;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>(4)return<br>       return 将函数的值返回给函数的调用者，即将程序的控制权返回到调用者的作用域。如果全局作用域内使用  return 关键字，那么将终止本次的执行<br>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function fun($a,$b,$c)&#123;</span><br><span class="line">	echo $a;</span><br><span class="line">	return $b;</span><br><span class="line">	echo $c;</span><br><span class="line">&#125;</span><br><span class="line">echo fun(1,2,3);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>–函数递归<br>概念：<br>递归函数即为自调用函数，</p>
+<p>在函数体内直接或间接自己调用自己，但需要设置自调用的条件，</p>
+<p>若满足条件，则调用函数本身，</p>
+<p>若不满足则终止本函数的自调用，然后把目前流程的<br>主控权交回给上一层函数来执行</p>
+<h2 id="六、PHP数组"><a href="#六、PHP数组" class="headerlink" title="六、PHP数组"></a>六、PHP数组</h2><p>–PHP数组<br>概念：<br>       数组：array，数据的组合，指将一组数据（多个）存储到一个指定的容器中，用变量指向该容器，然后可以通过变量一次性得到该容器中的所有数据<br>语法：<br>使用array关键字：最常用的。<br>$变量 &#x3D; array(元素1,元素2,元素3..);<br>可以使用中括号来包裹数据：<br>$变量 &#x3D; [元素1,元素2…];<br>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$array = array(&#x27;一&#x27;,1,ture);</span><br><span class="line">print_r ($array);</span><br></pre></td></tr></table></figure>
+<p>–PHP数组类型<br>概念：<br>PHP 支持三种类型：</p>
+<ul>
+<li>索引数组 - 带有数字索引的数组</li>
+<li>关联数组 - 带有指定键的数组</li>
+<li>多维数组 - 包含一个或多个数组的数组<br>–PHP数组类型(索引数组)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$stu = [&#x27;tom&#x27;,&#x27;berry&#x27;,&#x27;ketty&#x27;];</span><br><span class="line">print_r($stu);		//输出数组  Array ( [0] =&gt; tom [1] =&gt; berry [2] =&gt; ketty ) </span><br><span class="line">echo &#x27;&lt;hr&gt;&#x27;;</span><br><span class="line">echo $stu[0],&#x27;&lt;br&gt;&#x27;;	//tom</span><br><span class="line">echo $stu[1],&#x27;&lt;br&gt;&#x27;;	//berry</span><br><span class="line">echo $stu[2],&#x27;&lt;hr&gt;&#x27;;	//ketty</span><br></pre></td></tr></table></figure>
+获得数组的长度—count()函数：<br>count() 函数用于返回数组的长度（元素数）：<br>实例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$cars=array(&quot;porsche&quot;,&quot;BMW&quot;,&quot;Volvo&quot;);</span><br><span class="line"></span><br><span class="line">echo count($cars);</span><br></pre></td></tr></table></figure>
+判断是否是数组—is_array()函数：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Is_array() 函数用于判断是否是数组：</span><br><span class="line"></span><br><span class="line">$cars=array(&quot;porsche&quot;,&quot;BMW&quot;,&quot;Volvo&quot;);</span><br><span class="line"></span><br><span class="line">echo is_array($cars);</span><br></pre></td></tr></table></figure>
+遍历索引数组：<br>如需遍历并输出索引数组的所有值，可以使用 for 循环，就像这样：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$cars=array(&quot;porsche&quot;,&quot;BMW&quot;,&quot;Volvo&quot;);</span><br><span class="line"></span><br><span class="line">$arrlength=count($cars);</span><br><span class="line"></span><br><span class="line">for($x=0;$x&lt;$arrlength;$x++) &#123;</span><br><span class="line"></span><br><span class="line">  echo $cars[$x];</span><br><span class="line"></span><br><span class="line">  echo &quot;&lt;br&gt;&quot;;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+–PHP数组类型(关联数组)<br>关联数组：<br>关联数组是使用你分配给数组的指定键的数组</li>
+</ul>
+<p>Array(键1&#x3D;&gt;值1, 键2&#x3D;&gt;值2, 键3&#x3D;&gt;值3)</p>
+<p>&#x3D;&gt; 是数组成员访问符号</p>
+<p>-&gt; 是对象成员访问符号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$emp=array(&#x27;name&#x27;=&gt;&#x27;李白&#x27;,&#x27;sex&#x27;=&gt;&#x27;男&#x27;,&#x27;age&#x27;=&gt;22);</span><br><span class="line">print_r($emp);			//Array ( [name] =&gt; 李白 [sex] =&gt; 男 [age] =&gt; 22 ) </span><br><span class="line">echo &#x27;&lt;hr&gt;&#x27;;</span><br><span class="line">echo $emp[&#x27;name&#x27;],&#x27;&lt;br&gt;&#x27;;		//李白</span><br><span class="line">echo $emp[&#x27;sex&#x27;],&#x27;&lt;br&gt;&#x27;;		//男</span><br><span class="line">echo $emp[&#x27;age&#x27;];			//22</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>–数组遍历(foreach循环)<br>foreach 结构遍历数组<br>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Foreach($数组变量 as [$下标 =&gt;] $值)&#123;</span><br><span class="line">	//通过$下标访问元素的下标；通过$值访问元素的值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>索引数组</p>
+<p>Foreach($arr as $value){</p>
+<p>}</p>
+<p>关联数组</p>
+<p>Foreach($arr as $key &#x3D;&gt; $value){</p>
+<p>}</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308141645283.png" alt="image-20230814164528712"><br>–PHP数组结构<br>PHP 数组结构分为两种：一维数组和二维数组<br>二维数组：<br>$arr &#x3D; array(array($value1, $value2, $value3), array($value1, $value2, $value3));<br>二维数组是数组的数组（三维数组是数组的数组的数组）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$cars = array</span><br><span class="line">  (</span><br><span class="line">  array(&quot;Volvo&quot;,22,18),</span><br><span class="line">  array(&quot;BMW&quot;,15,13),</span><br><span class="line">  array(&quot;Saab&quot;,5,2),</span><br><span class="line">  array(&quot;Land Rover&quot;,17,15)</span><br><span class="line">  );</span><br></pre></td></tr></table></figure>
+<p>–PHP数组的操作<br>数组的合并：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$array1 =array(&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;);</span><br><span class="line">$array2 = array(&#x27;a1&#x27;=&gt;&#x27;php&#x27;,&#x27;a2&#x27;=&gt;&#x27;python&#x27;,&#x27;a3&#x27;=&gt;&#x27;java&#x27;);</span><br><span class="line">$array3 = array_merge($array1,$array2);</span><br><span class="line">print_r(&quot;&lt;pre&gt;&quot;);</span><br><span class="line">print_r($array3);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>添加数组的元素：<br>array_push() 函数向第一个参数的数组尾部添加一个或多个元素（入栈），然后返回新数组的长度</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array_push($array1,&#x27;d&#x27;,&#x27;e&#x27;);</span><br><span class="line">print_r($array1);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>下标为空自动添加参数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$array1[]=&#x27;d&#x27;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>有键值的添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$array1[&#x27;a4&#x27;]=&#x27;javasciprt&#x27;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>添加到指定位置：<br>array_splice(数组，位置，删除几个，增加元素）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$array1 = array(&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;, &#x27;e&#x27;);</span><br><span class="line">$array2 = array(&#x27;x&#x27;);</span><br><span class="line">array_splice($array1, 3, 0, $array2); // 插入到位置3且删除0个</span><br><span class="line">print_r($array1);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>删除某个元素：<br>array_splice(数组，位置，删除几个，增加元素）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$array1 = array(&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;, &#x27;e&#x27;);</span><br><span class="line">$array2 = array(&#x27;x&#x27;);</span><br><span class="line">array_splice($array1, 3, 1); </span><br><span class="line">print_r($array1);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>(unset)销毁指定的元素：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$array1 = array(&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;, &#x27;e&#x27;);</span><br><span class="line">unset($array1[0]);</span><br><span class="line">print_r($array1);</span><br><span class="line"> </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>–常用的数组函数</p>
+<ul>
+<li>is_array 判断是否为数组</li>
+<li>count() 数组的元素数目</li>
+<li>array_search() 在数组中搜索给定的值，如果成功则返回相应的键名</li>
+<li>array_key_exists() 在给定的 key 存在于数组中时返回 TRUE</li>
+<li>array_unshift()  将传入的单元插入到 array 数组的开头。注意单元是作为整体被插入的，因此传入单元将保持同样的顺序。所有的数值键名将修改为从零开始重新计数，所有的文字键名保持不变</li>
+<li>array_shift()  将array 的第一个单元移出并作为结果返回，将 array 的长度减一并将所有其它单元向前移动一位。所有的数字键名将改为从零开始计数，文字键名将不变。</li>
+<li>array_unique()  接受 array 作为输入并返回没有重复值的新数组。注意键名保留不变。 </li>
+<li>in_array() 检查数组中是否存在某个值  如果找到指定的值则返回 TRUE，否则返回 FALSE</li>
+</ul>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 博客
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;梨花落梦
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>
