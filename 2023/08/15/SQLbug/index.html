@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title> | 博客</title>
+        <meta name="author" content="梨花落梦" />
+        <meta name="description" content="a ordinary netword engineer" />
+        <meta name="keywords" content="原神启动" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>博客</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;博客</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1></h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/15
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="SQL注入漏洞"><a href="#SQL注入漏洞" class="headerlink" title="SQL注入漏洞"></a>SQL注入漏洞</h1><h2 id="一、SQL注入漏洞简介"><a href="#一、SQL注入漏洞简介" class="headerlink" title="一、SQL注入漏洞简介"></a>一、SQL注入漏洞简介</h2><p>SQL注入用户通过浏览器或者其他客户端将恶意SQL语句插入到网站参数中，网站应用程序未经过过滤，将恶意SQL语句带入数据库进行执行，通过数据库获取了敏感的信息或者执行了其他恶意操作。</p>
+<span id="more"></span>
+<p>(1)SQL注入漏洞的成因：<br>用户提交的参数数据未做充分检查过滤<br>(2)SQL注入危害<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152010977.png" alt="image-20230815200954622"><br>(3)动态网站工作流程<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152010550.png" alt="image-20230815201046227"><br>(4)SQL注入分类</p>
+<ul>
+<li>数据类型<ul>
+<li>数字型  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$id=$_GET[&#x27;id&#x27;];</span><br><span class="line">$sql=&quot;SELECT * FROM users WHERE id=$id LIMIT 0,1&quot;;</span><br><span class="line">$result=mysql_query($sql);</span><br><span class="line">$row = mysql_fetch_array($result);</span><br></pre></td></tr></table></figure>
+提交 1 and 1&#x3D;1<br>语句变成SELECT * FROM users WHERE id&#x3D;1 and 1&#x3D;1 limit 0,1<br>这时语句前值后值都为真，and以后也为真，返回查询到的数据。<br>执行了攻击者额外的SQL查询语句，导致SQL注入漏洞猜列名。</li>
+<li>字符型  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$id=$_GET[&#x27;id&#x27;];</span><br><span class="line">$sql=&quot;SELECT * FROM users WHERE id=&#x27;$id&#x27; LIMIT 0,1&quot;;</span><br><span class="line">$result=mysql_query($sql);</span><br><span class="line">$row = mysql_fetch_array($result);</span><br></pre></td></tr></table></figure>
+提交 1’ and ‘1’&#x3D;‘1<br>语句变成SELECT * FROM users WHERE id&#x3D;‘1’ and ‘1’&#x3D;‘1’limit 0,1<br>这时语句前值后值都为真，and以后也为真，返回查询到的数据。<br>执行了攻击者额外的SQL查询语句，导致SQL注入漏洞猜列名。</li>
+</ul>
+</li>
+<li>返回结果<ul>
+<li>报错型</li>
+<li>盲注型</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、MySQL注入"><a href="#二、MySQL注入" class="headerlink" title="二、MySQL注入"></a>二、MySQL注入</h2><p>(1)SQL Injection函数</p>
+<table>
+<thead>
+<tr>
+<th align="center">函数&#x2F;语句</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">user（）</td>
+<td align="center">当前用户名</td>
+</tr>
+<tr>
+<td align="center">database()</td>
+<td align="center">当前所用数据库</td>
+</tr>
+<tr>
+<td align="center">current_user()</td>
+<td align="center">当前用户名（可用来查看权限）</td>
+</tr>
+<tr>
+<td align="center">version()</td>
+<td align="center">数据库的版本</td>
+</tr>
+<tr>
+<td align="center">@@datadir</td>
+<td align="center">操作系统版本</td>
+</tr>
+<tr>
+<td align="center">into dumpfile</td>
+<td align="center">写文件操作</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">into outfile：写文件</span><br><span class="line">    &#123;select &#x27;&lt;?php eval($_POST[a])?&gt;&#x27; into outfile &#x27;D:/phpstudy/www/ly.php’&#125;</span><br><span class="line">load_file()：读文件操作</span><br><span class="line">concat(str1,str2..)：连接字符串，连接两个或多个数组</span><br><span class="line">group_concat(str1,str2..)：连接字符串，能将相同的行组合起来</span><br><span class="line">length（） =&gt;计算字符串长度</span><br><span class="line">hex（）  =&gt;字符转换为16进制</span><br></pre></td></tr></table></figure>
+<p>(2)SQL注释<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152024099.png" alt="image-20230815202446059"><br>(3)information_schema库<br>从MySQL 5开始，MySQL自带information_schema数据库，它提供了访问数据库元数据的方式。元数据是关于数据的数据，如数据库名或表名，列的数据类型，或访问权限等。information_schema数据库存储了 SCHEMATA表、TABLES表、COLUMNS表<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152026398.png" alt="image-20230815202620652"><br>(4)MySQL库<br>       MySQL库这个是MySQL的核心数据库，主要负责存储数据库的用户、权限设置、关键字等MySQL数据库需要使用的控制和管理信息。</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152027956.png" alt="image-20230815202707948"><br>（5）union联合查询<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152028892.png" alt="image-20230815202811078"><br>union操作符用于合并两个或多个select语句的结果集。<br>联合查询中合并的选择查询必须具有相同的输出字段数、采用相同的顺序并包含相同或兼容的数据类型。<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152029116.png" alt="image-20230815202939951"><br>(6)MySQL注入<br>       如何判断是字符型注入和数字型注入？<br>数字型：select * from users where id &#x3D;x<br>这种类型可以使用经典的and 1&#x3D;1 and 1&#x3D;2来判断<br>url地址中输入<a target="_blank" rel="noopener" href="http://www.xxxx.com/ccc.php?id=x">www.xxxx.com/ccc.php?id=x</a> and 1&#x3D;1<br>    页面显示正常，继续下一步<br>url地址中输入<a target="_blank" rel="noopener" href="http://www.xxxx.com/ccc.php?id=x">www.xxxx.com/ccc.php?id=x</a> and 1&#x3D;2<br>    页面错误，这说明存在数字型注入。<br>select * from users where id &#x3D;x and 1&#x3D;1；<br>没有语法显示错误且，返回正常<br>select * from users where id &#x3D;1 and 1&#x3D;2;<br>没有语法错误且，返回错误<br>我们在使用假设：<br>如果是字符型注入的话，我们输入的语句应该会出现这样的状况<br>select * from users where id &#x3D;’1 and 1&#x3D;1’;<br>select * from users where id &#x3D;’1 and 1&#x3D;2’;<br>查询语句将and语句全部转换成字符串，并没有进行and的逻辑判断，所以不会出现以上结果，所以这个等式是不成立的。<br>字符型<br>当输入的参数x为字符型时，通常sql语句会这样的<br>select * from users where id &#x3D;’x’<br>这种类型我们可以使用and ‘1’&#x3D;’1 和 and ‘1’&#x3D;’2来进行测试<br><a target="_blank" rel="noopener" href="http://www.xxx.com/ccc.php?id=%E2%80%981%E2%80%99">www.xxx.com/ccc.php?id=‘1’</a> and ‘1’&#x3D;1’<br>页面正常，继续下一步<br><a target="_blank" rel="noopener" href="http://www.xxx.com/ccc.php?id=%E2%80%981%E2%80%99">www.xxx.com/ccc.php?id=‘1’</a> and ‘1’&#x3D;’2’<br>页面报错，则说明存在字符型注入。<br>原因如下：<br>当输入and ‘1’&#x3D;‘1的时候，后台执行的语句是<br>select * from users where id&#x3D;’x’ and ‘1’&#x3D;’1’<br>语法正确，逻辑判断正确，返回正确<br>当输入and ‘1’&#x3D;‘2的时候，后台执行的语句是<br>select * from users where id&#x3D;’x’ and ‘1’&#x3D;’2’<br>语法正确，逻辑判断错误，返回错误<br>字符型和数字型最大的一个区别在于，数字型不需要单引号来闭合，而字符串一般需要通过单引号来闭合的。<br>(7)union联合查询<br>order by语句<br>ORDER BY 语句用于根据指定的列对结果集进行排序。（判断列数）<br>ORDER BY 语句默认按照升序对记录进行排序。</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152034880.png" alt="image-20230815203405394"><br>判断是否存在注入与求闭合字符<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152034739.png" alt="image-20230815203450537"></p>
+<p>经判断存在注入<br>数字型注入:</p>
+<p>id  &#x3D; 1’                返回不正常<br>id &#x3D; 1 and  1 &#x3D;1    正常返回<br>id &#x3D; 1 and  1&#x3D;2     不正常返回</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152039958.png" alt="image-20230815203902558"><br>单引号字符型SQL注入<br>id  &#x3D; 1’ 异常<br>id &#x3D; 1’ and  ‘1’ &#x3D;’1 正常返回<br>id &#x3D; 1’ and  ‘1’ &#x3D;’2 不正常返回</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152039013.png" alt="image-20230815203938957"><br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152039731.png" alt="image-20230815203954785"><br>输入union select 1,2,3  返回1,2,3，说明1、2、3都是显错点</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152040771.png" alt="image-20230815204050809"></p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152041663.png" alt="image-20230815204134686"></p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152043332.png" alt="image-20230815204304398"></p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152043963.png" alt="image-20230815204341982"></p>
+<p>(8)bool注入</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152045885.png" alt="image-20230815204535898"></p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152045157.png" alt="image-20230815204551043"><br>a.substring函数</p>
+<ul>
+<li>substring函数  </li>
+<li>截取字符串的长度</li>
+<li>substring(字段名,A, N)，这个函数是用来截取()里的字段从第A个长度起往后截取N个字，比如substring(username,1,2)就表示从username字段中从第1个字符向后截取2位，包括第1个字符，比如值为admin，截取的就是ad。<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152047635.png" alt="image-20230815204754623"></li>
+</ul>
+<p>b.ascii函数</p>
+<ul>
+<li>ascii函数</li>
+<li>ascii(‘a’) ，返回a字母的ascii码97<br><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152049235.png" alt="image-20230815204908867"></li>
+</ul>
+<p>c.原因分析</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152052398.png" alt="image-20230815205236457"><br>$id参数没有过滤直接拼接到数据库中执行，存在数字型注入。</p>
+<p>输入参数id进行SQL注入，SQL语句执行后，$result返回真，应用程序并没有输出查询的结果，而是显示ok字符串；$result返回假，显示空，这样就无法通过SQL注入将数据库的查询结果显示到前端页面中，因此只能通过前端页面显示的是ok字符串，来判断输入的SQL注入测试语句的是否正常，以此进行注入。</p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152053835.png" alt="image-20230815205349897"></p>
+<p><img src="https://raw.githubusercontent.com/lihualuomeng/picturebed/main/tupian/202308152053509.png" alt="image-20230815205318443"><br>1、输入<a target="_blank" rel="noopener" href="http://www.test.com/index.php?id=1">http://www.test.com/index.php?id=1</a>  and (select ASCII(SUBSTRING (database(),1,1)))&gt;98<br>页面返回正常，说明数据库的第一个字符的ASCII码大于98。<br>2、输入<a target="_blank" rel="noopener" href="http://www.test.com/index.php?id=1">http://www.test.com/index.php?id=1</a>  and (select ASCII(SUBSTRING (database(),1,1)))&gt;99<br>页面返回不正常，说明数据库的第一个字符的ASCII码不大于98，也就是99，说明是字符c。<br>3、通过and (select ASCII(SUBSTRING (database(),1,1)))&gt;X，获取到数据库中其他字符串的信息，得到数据库的名称为ctfswiki。</p>
+<h2 id="三、Oracle注入"><a href="#三、Oracle注入" class="headerlink" title="三、Oracle注入"></a>三、Oracle注入</h2><h2 id="四、SQL-Server注入"><a href="#四、SQL-Server注入" class="headerlink" title="四、SQL Server注入"></a>四、SQL Server注入</h2><h2 id="五、Access注入"><a href="#五、Access注入" class="headerlink" title="五、Access注入"></a>五、Access注入</h2><h2 id="六、二次注入"><a href="#六、二次注入" class="headerlink" title="六、二次注入"></a>六、二次注入</h2><h2 id="七自动化SQL注入神器SQLMAP"><a href="#七自动化SQL注入神器SQLMAP" class="headerlink" title="七自动化SQL注入神器SQLMAP"></a>七自动化SQL注入神器SQLMAP</h2><h2 id="八、SQL注入绕过"><a href="#八、SQL注入绕过" class="headerlink" title="八、SQL注入绕过"></a>八、SQL注入绕过</h2><h2 id="九、MySQL注入漏洞修复"><a href="#九、MySQL注入漏洞修复" class="headerlink" title="九、MySQL注入漏洞修复"></a>九、MySQL注入漏洞修复</h2>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 博客
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;梨花落梦
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+
+
+
+        
+    </body>
+</html>
